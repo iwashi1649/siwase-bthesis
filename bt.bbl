@@ -1,0 +1,93 @@
+\begin{thebibliography}{10}
+
+\bibitem{statista_worldwide_data_created}
+Petroc Taylor, Data generation volume worldwide 2010--2029, (2025),
+  https://www.statista.com/statistics/871513/worldwide-data-created/, Accessed:
+  2026-01-26.
+
+\bibitem{dna_data_storage_alliance_2021_intro}
+{DNA Data Storage Alliance}, Preserving our digital legacy: An introduction to
+  dna data storage, Technical report, (DNA Data Storage Alliance, San Diego,
+  CA, 2021).
+
+\bibitem{reinsel2017dataage2025}
+David Reinsel, John Gantz, and John Rydning, Data age 2025: The evolution of
+  data to life-critical --- don't focus on big data; focus on the data that's
+  big, Idc white paper, sponsored by seagate, (International Data Corporation
+  (IDC), Framingham, MA, 2017).
+
+\bibitem{akash2024_applicable}
+A.~Akash, E.~Bencurova, and T.~Dandekar, How to make {DNA} data storage more
+  applicable, {\em Trends in Biotechnology\/}, Vol.~42, No.~1, (2024), pp.
+  17--30.
+
+\bibitem{Ceze2019}
+Luis Ceze, Jeff Nivala, and Karin Strauss, Molecular digital data storage using
+  {DNA}, {\em Nature Reviews Genetics\/}, Vol.~20, No.~8, (2019), pp. 456--466.
+
+\bibitem{Simon2009}
+S.~A. Simon, J.~Zhai, R.~S. Nandety, K.~P. McCormick, J.~Zeng, D.~Mejia, and
+  B.~C. Meyers, Short-read sequencing technologies for transcriptional
+  analyses, {\em Annual Review of Plant Biology\/}, Vol.~60, (2009), pp.
+  305--333.
+
+\bibitem{Amarasinghe2020}
+S.~L. Amarasinghe, S.~Su, X.~Dong, L.~Zappia, M.~E. Ritchie, and Q.~Gouil,
+  Opportunities and challenges in long-read sequencing data analysis, {\em
+  Genome Biology\/}, Vol.~21, No.~1, (2020), p.~30.
+
+\bibitem{SBS}
+M.~Uhlen and S.~R. Quake, Sequential sequencing by synthesis and the
+  next-generation sequencing revolution, {\em Trends in Biotechnology\/},
+  Vol.~41, No.~12, (2023), pp. 1565--1572, Epub 2023 Jul 21; PMID: 37482467.
+
+\bibitem{Dorey2024}
+Adam Dorey and Stefan Howorka, Nanopore {DNA} sequencing technologies and their
+  applications towards single-molecule proteomics, {\em Nature Chemistry\/},
+  Vol.~16, No.~3, (2024), pp. 314--334.
+
+\bibitem{HEDGES}
+William~H. Press, John~A. Hawkins, Stephen~K. Jones, Jeffrey~M. Schaub, and
+  Ilya~J. Finkelstein, Hedges error-correcting code for dna storage corrects
+  indels and allows sequence constraints, {\em Proceedings of the National
+  Academy of Sciences\/}, Vol. 117, No.~31, (2020), pp. 18489--18496.
+
+\bibitem{bonito}
+{Chris Seymour, Oxford Nanopore Technologies Ltd.}, Bonito: A pytorch
+  basecaller for oxford nanopore reads, (2019), Oxford Nanopore Technologies,
+  Ltd. Public License, v. 1.0.
+
+\bibitem{Gervasio}
+Joao Gervasio, Henrique Oliveira, Andr^^c3^^a9 Costa~Martins, Joao Pesquero,
+  Bruno Verona, and Natalia Cerize, How close are we to storing data in dna?,
+  {\em Trends in Biotechnology\/}, Vol.~42, (2023).
+
+\bibitem{Astar}
+Peter~E. Hart, Nils~J. Nilsson, and Bertram Raphael, A formal basis for the
+  heuristic determination of minimum cost paths, {\em IEEE Transactions on
+  Systems Science and Cybernetics\/}, Vol.~4, No.~2, (1968), pp. 100--107.
+
+\bibitem{GOTOH1982705}
+Osamu Gotoh, An improved algorithm for matching biological sequences, {\em
+  Journal of Molecular Biology\/}, Vol. 162, No.~3, (1982), pp. 705--708.
+
+\bibitem{squigulator}
+Hasindu Gamaarachchi, James~M Ferguson, Hiruna Samarakoon, Kisaru Liyanage, and
+  Ira~W Deveson, Squigulator: simulation of nanopore sequencing signal data
+  with tunable noise parameters, {\em bioRxiv\/}, (2023), pp. 2023--05.
+
+\bibitem{biopython}
+Peter J.~A. Cock, Tiago Antao, Jeffrey~T. Chang, Brad~A. Chapman, Cymon~J. Cox,
+  Andrew Dalke, Iddo Friedberg, Thomas Hamelryck, Frank Kauff, Bartek
+  Wilczynski, and Michiel J.~L. de~Hoon, Biopython: freely available python
+  tools for computational molecular biology and bioinformatics, {\em
+  Bioinformatics\/}, Vol.~25, No.~11, (2009), pp. 1422--1423.
+
+\bibitem{kokoro}
+夏目漱石, こころ, (1914), https://www.aozora.gr.jp/cards/000148/card773.html.
+
+\bibitem{10.1371/journal.pone.0257521}
+Clara Delahaye and Jacques Nicolas, Sequencing dna with nanopores: Troubles and
+  biases, {\em PLOS ONE\/}, Vol.~16, No.~10, (2021), pp. 1--29.
+
+\end{thebibliography}

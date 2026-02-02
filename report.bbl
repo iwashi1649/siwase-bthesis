@@ -1,0 +1,108 @@
+\begin{thebibliography}{10}
+
+\bibitem{akash2024_applicable}
+Akash, A., Bencurova, E. and Dandekar, T.: How to make {DNA} data storage more
+  applicable, {\em Trends in Biotechnology\/},  Vol.~42, No.~1, pp.\ 17--30
+  (2024).
+
+\bibitem{Amarasinghe2020}
+Amarasinghe, S.~L., Su, S., Dong, X., Zappia, L., Ritchie, M.~E. and Gouil, Q.:
+  Opportunities and challenges in long-read sequencing data analysis, {\em
+  Genome Biology\/},  Vol.~21, No.~1, p.~30 (2020).
+
+\bibitem{Ceze2019}
+Ceze, L., Nivala, J. and Strauss, K.: Molecular digital data storage using
+  {DNA}, {\em Nature Reviews Genetics\/},  Vol.~20, No.~8, pp.\ 456--466
+  (2019).
+
+\bibitem{bonito}
+{Chris Seymour, Oxford Nanopore Technologies Ltd.}: Bonito: A PyTorch
+  Basecaller for Oxford Nanopore Reads (2019).
+\newblock Oxford Nanopore Technologies, Ltd. Public License, v. 1.0.
+
+\bibitem{biopython}
+Cock, P. J.~A., Antao, T., Chang, J.~T., Chapman, B.~A., Cox, C.~J., Dalke, A.,
+  Friedberg, I., Hamelryck, T., Kauff, F., Wilczynski, B. and de Hoon, M.
+  J.~L.: Biopython: freely available Python tools for computational molecular
+  biology and bioinformatics, {\em Bioinformatics\/},  Vol.~25, No.~11, pp.\
+  1422--1423 (2009).
+
+\bibitem{10.1371/journal.pone.0257521}
+Delahaye, C. and Nicolas, J.: Sequencing DNA with nanopores: Troubles and
+  biases, {\em PLOS ONE\/},  Vol.~16, No.~10, pp.\ 1--29 (2021).
+
+\bibitem{dna_data_storage_alliance_2021_intro}
+{DNA Data Storage Alliance}: Preserving Our Digital Legacy: An Introduction to
+  DNA Data Storage, Technical report, DNA Data Storage Alliance, San Diego, CA
+  (2021).
+
+\bibitem{Dorey2024}
+Dorey, A. and Howorka, S.: Nanopore {DNA} sequencing technologies and their
+  applications towards single-molecule proteomics, {\em Nature Chemistry\/},
+  Vol.~16, No.~3, pp.\ 314--334 (2024).
+
+\bibitem{squigulator}
+Gamaarachchi, H., Ferguson, J.~M., Samarakoon, H., Liyanage, K. and Deveson,
+  I.~W.: Squigulator: simulation of nanopore sequencing signal data with
+  tunable noise parameters, {\em bioRxiv\/}, pp.\ 2023--05 (2023).
+
+\bibitem{Gervasio}
+Gervasio, J., Oliveira, H., Costa~Martins, A., Pesquero, J., Verona, B. and
+  Cerize, N.: How close are we to storing data in DNA?, {\em Trends in
+  Biotechnology\/},  Vol.~42 (2023).
+
+\bibitem{GOTOH1982705}
+Gotoh, O.: An improved algorithm for matching biological sequences, {\em
+  Journal of Molecular Biology\/},  Vol.~162, No.~3, pp.\ 705--708 (1982).
+
+\bibitem{OldTebiki}
+Graves, A., Fern\'{a}ndez, S., Gomez, F. and Schmidhuber, J.: Connectionist
+  temporal classification: labelling unsegmented sequence data with recurrent
+  neural networks,  {\em Proceedings of the 23rd International Conference on
+  Machine Learning\/}, ICML '06, New York, NY, USA, Association for Computing
+  Machinery, p.\ 369^^e2^^80^^93376 (2006).
+
+\bibitem{Astar}
+Hart, P.~E., Nilsson, N.~J. and Raphael, B.: A Formal Basis for the Heuristic
+  Determination of Minimum Cost Paths, {\em IEEE Transactions on Systems
+  Science and Cybernetics\/},  Vol.~4, No.~2, pp.\ 100--107 (1968).
+
+\bibitem{NEEDLEMAN1970443}
+Needleman, S.~B. and Wunsch, C.~D.: A general method applicable to the search
+  for similarities in the amino acid sequence of two proteins, {\em Journal of
+  Molecular Biology\/},  Vol.~48, No.~3, pp.\ 443--453 (1970).
+
+\bibitem{HEDGES}
+Press, W.~H., Hawkins, J.~A., Jones, S.~K., Schaub, J.~M. and Finkelstein,
+  I.~J.: HEDGES error-correcting code for DNA storage corrects indels and
+  allows sequence constraints, {\em Proceedings of the National Academy of
+  Sciences\/},  Vol.~117, No.~31, pp.\ 18489--18496 (2020).
+
+\bibitem{reinsel2017dataage2025}
+Reinsel, D., Gantz, J. and Rydning, J.: Data Age 2025: The Evolution of Data to
+  Life-Critical --- Don't Focus on Big Data; Focus on the Data That's Big, Idc
+  white paper, sponsored by seagate, International Data Corporation (IDC),
+  Framingham, MA (2017).
+
+\bibitem{Simon2009}
+Simon, S.~A., Zhai, J., Nandety, R.~S., McCormick, K.~P., Zeng, J., Mejia, D.
+  and Meyers, B.~C.: Short-read sequencing technologies for transcriptional
+  analyses, {\em Annual Review of Plant Biology\/},  Vol.~60, pp.\ 305--333
+  (2009).
+
+\bibitem{statista_worldwide_data_created}
+Taylor, P.: Data generation volume worldwide 2010--2029 (2025).
+\newblock https://www.statista.com/statistics/871513/worldwide-data-created/,
+  Accessed: 2026-01-26.
+
+\bibitem{SBS}
+Uhlen, M. and Quake, S.~R.: Sequential sequencing by synthesis and the
+  next-generation sequencing revolution, {\em Trends in Biotechnology\/},
+  Vol.~41, No.~12, pp.\ 1565--1572 (2023).
+\newblock Epub 2023 Jul 21; PMID: 37482467.
+
+\bibitem{kokoro}
+夏目漱石: こころ (1914).
+\newblock https://www.aozora.gr.jp/cards/000148/card773.html.
+
+\end{thebibliography}

@@ -1,0 +1,56 @@
+This is pBibTeX, Version 0.99d-j0.33 (utf8.euc) (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: report.aux
+The style file: kuissort.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: reference.bib
+Warning--entry type for "bonito" isn't style-file defined
+--line 77 of file reference.bib
+Warning--entry type for "statista_worldwide_data_created" isn't style-file defined
+--line 187 of file reference.bib
+Warning--there's no number and/or volumesquigulator
+Warning--Missing required argument pages in Gervasio
+Warning--there's a series but neither volume nor number in OldTebiki
+You've used 20 entries,
+            2494 wiz_defined-function locations,
+            712 strings with 8547 characters,
+and the built_in function-call counts, 8730 in all, are:
+= -- 812
+> -- 385
+< -- 14
++ -- 161
+- -- 138
+* -- 642
+:= -- 1276
+add.period$ -- 24
+call.type$ -- 20
+change.case$ -- 111
+chr.to.int$ -- 0
+cite$ -- 23
+duplicate$ -- 340
+empty$ -- 641
+format.name$ -- 207
+if$ -- 1987
+int.to.chr$ -- 0
+int.to.str$ -- 20
+missing$ -- 15
+newline$ -- 67
+num.names$ -- 40
+pop$ -- 134
+preamble$ -- 1
+purify$ -- 109
+quote$ -- 0
+skip$ -- 441
+stack$ -- 0
+substring$ -- 496
+swap$ -- 169
+text.length$ -- 14
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 80
+warning$ -- 3
+while$ -- 67
+width$ -- 22
+write$ -- 169
+is.kanji.str$ -- 102
+(There were 5 warnings)

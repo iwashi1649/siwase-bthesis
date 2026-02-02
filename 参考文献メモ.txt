@@ -1,0 +1,82 @@
+参考文献メモ
+
+ナノポアシーケンサー 500bp-2.3Mbpまで対応
+エラー多い、インデル特に多い
+Amarasinghe, S. L., Su, S., Dong, X., Zappia, L., Ritchie, M. E. and Gouil,
+Q.: Opportunities and challenges in long-read sequencing data analysis,
+Genome biology, Vol. 21, No. 1, p. 30 (2020).
+https://link.springer.com/article/10.1186/s13059-020-1935-5
+
+
+ナノポアシーケンサー
+高スループット、低コスト、高速
+数十万塩基
+電気泳動、
+ナノポアの直径は約1nm
+ヘリカーゼによって1本鎖に分解、速度を制御
+ Dorey, A. and Howorka, S.: Nanopore DNA sequencing technologies and
+their applications towards single-molecule proteomics, Nature chemistry,
+Vol. 16, No. 3, pp. 314–334 (2024)
+https://www-nature-com.kyoto-u.idm.oclc.org/articles/s41557-023-01322-x
+
+basecallerのいくつかのバージョン
+albacore, guppy, bonito,dorado
+https://nanoporetech.com/platform/technology/basecalling
+
+
+bonitoの説明
+Zhimeng Xu, Yuting Mai, Denghui Liu, Wenjun He, Xinyuan Lin, Chi Xu, Lei Zhang, Xin Meng, Joseph Mafofo, Walid Abbas Zaher, Ashish Koshy, Yi Li, Nan Qiao,
+Fast-bonito: A faster deep learning based basecaller for nanopore sequencing,
+Artificial Intelligence in the Life Sciences,Volume 1,2021,100011,ISSN 2667-3185,
+https://doi.org/10.1016/j.ailsci.2021.100011.
+
+
+Raw signal (電流波形)
+        │
+        ▼
++-----------------------------+
+| 前処理・正規化             |
+| - クリッピング/正規化など  |
++-----------------------------+
+        │
+        ▼
++-----------------------------+
+| 1D CNN ブロック             |
+| - Conv-BN-Activation ×数層  |
+| - ストライド付きConvで      |
+|   時系列をダウンサンプル   |
++-----------------------------+
+        │  （短い特徴系列）
+        ▼
++-----------------------------+
+| 多層 BiLSTM                 |
+| - 前後方向の文脈を学習      |
+| - 隠れ状態系列 h_t を出力   |
++-----------------------------+
+        │
+        ▼
++-----------------------------+
+| 線形(全結合)層              |
+| - 各時刻 t について          |
+|   h_t → ロジット z_t        |
+|   (A,C,G,T, blank)          |
++-----------------------------+
+        │
+        ▼
++-----------------------------+
+| Softmax                     |
+| - 各時刻ごとの              |
+|   ラベル確率列 p_t(k)       |
++-----------------------------+
+        │
+        ▼
++-----------------------------+
+| CTC Decoder                 |
+| - greedy or beam searchで   |
+|   最尤ラベル列を探索        |
+| - collapse（連続ラベル圧縮  |
+|   ＋ blank削除）で塩基列化  |
++-----------------------------+
+        │
+        ▼
+Final base sequence (ATCG…)

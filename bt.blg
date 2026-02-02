@@ -1,0 +1,52 @@
+This is pBibTeX, Version 0.99d-j0.33 (utf8.euc) (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: bt.aux
+The style file: kueethesis.bst
+Database file #1: reference.bib
+Warning--entry type for "bonito" isn't style-file defined
+--line 77 of file reference.bib
+Warning--entry type for "statista_worldwide_data_created" isn't style-file defined
+--line 187 of file reference.bib
+You've used 18 entries,
+            2383 wiz_defined-function locations,
+            684 strings with 7322 characters,
+and the built_in function-call counts, 6436 in all, are:
+= -- 591
+> -- 207
+< -- 34
++ -- 81
+- -- 63
+* -- 360
+:= -- 795
+add.period$ -- 18
+call.type$ -- 18
+change.case$ -- 20
+chr.to.int$ -- 0
+cite$ -- 18
+duplicate$ -- 376
+empty$ -- 512
+format.name$ -- 126
+if$ -- 1617
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 13
+newline$ -- 57
+num.names$ -- 18
+pop$ -- 98
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 397
+stack$ -- 0
+substring$ -- 329
+swap$ -- 143
+text.length$ -- 34
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 42
+width$ -- 20
+write$ -- 211
+is.kanji.str$ -- 219
+(There were 2 warnings)
