@@ -11,7 +11,7 @@
 
     \begin{center}
         \includegraphics[width=150mm]{architecture.png}
-        \caption{Bonito Basecallerのアーキテクチャ概要}\label{fig:bonito}
+        \caption{Bonitoアーキテクチャ概要}\label{fig:bonito}
     \end{center}
 \end{figure*}
 \kueeseparator

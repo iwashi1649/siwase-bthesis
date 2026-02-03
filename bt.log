@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.4.13)  3 FEB 2026 16:15
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.4.13)  3 FEB 2026 16:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -211,32 +211,38 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <20.74> not available
 \@kuee1figure=\count283
 \openout3 = `bt.fff'.
 
-(bt.fff) [3
+(bt.fff)
+Overfull \hbox (6.10255pt too wide) in paragraph at lines 131--142
+[]\JY1/mc/m/n/12 電流信号から塩基配列を決定するプロセスはベ ースコ ールと呼ばれ
+ ， ベ ースコ ー
+ []
+
+[3
 
 ]
 \@kuee2chapter=\count284
 \@kuee2figure=\count285
 
-Overfull \hbox (5.70811pt too wide) in paragraph at lines 157--160
+Overfull \hbox (5.70811pt too wide) in paragraph at lines 158--161
 \JY1/mc/m/n/12 ナノポアシ ーケンサ ーは一度に数百 \OT1/cmr/m/n/12 bp \JY1/mc/m/
 n/12 から数百万 \OT1/cmr/m/n/12 bp \JY1/mc/m/n/12 の塩基長の長いの \OT1/cmr/m/n
 /12 DNA
  []
 
 
-Overfull \hbox (0.28262pt too wide) in paragraph at lines 162--164
+Overfull \hbox (0.28262pt too wide) in paragraph at lines 163--165
 \JY1/mc/m/n/12 プルを柔軟に制御できるため ， 必要なデ ータを効率的に取り出すこ
 とが出来
  []
 
 [4] [5] [6] [7]
-Overfull \hbox (0.22108pt too wide) in paragraph at lines 299--303
+Overfull \hbox (0.22108pt too wide) in paragraph at lines 300--304
 \JY1/mc/m/n/12 言して探索を中止し ， ストランドの残りの部分をビ ッ ト消失として
 マ ークする ． 復
  []
 
 
-Overfull \hbox (0.2959pt too wide) in paragraph at lines 307--314
+Overfull \hbox (0.2959pt too wide) in paragraph at lines 308--315
 \JY1/mc/m/n/12 み出しを行う場合の詳細な出力特性に基づいた報酬とペナルテ ィ の最
 適化に
  []
@@ -244,19 +250,37 @@ Overfull \hbox (0.2959pt too wide) in paragraph at lines 307--314
 [8] [9]
 第{3}章.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 339.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 340.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 339.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 340.
 [10
 
 ]
 \@kuee3chapter=\count286
 \@kuee3figure=\count287
 
-Overfull \hbox (12.53929pt too wide) in paragraph at lines 392--396
+Overfull \hbox (0.30995pt too wide) in paragraph at lines 379--392
+[]\OT1/cmr/m/n/12 2.1 \JY1/mc/m/n/12 節で説明したように ， ベ ースコ ーラ ーは
+通常 ， \OT1/cmr/m/n/12 CTC \JY1/mc/m/n/12 出力に対してビ ームサ ー
+ []
+
+
+Overfull \hbox (6.0233pt too wide) in paragraph at lines 379--392
+\JY1/mc/m/n/12 チを用いて最終的に塩基配列を出力するが ， 本研究の提案手法ではベ
+ ースコ ーラ ー
+ []
+
+
+Overfull \hbox (12.53929pt too wide) in paragraph at lines 393--397
 \JY1/mc/m/n/12 さに依存する時系列長であり， 各行は各時点における \OT1/cmr/m/n/1
 2 5 \JY1/mc/m/n/12 種類のラベル $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 N; A; C; G;
  T\OMS/cmsy/m/n/12 g$
+ []
+
+
+Overfull \hbox (6.0233pt too wide) in paragraph at lines 402--413
+\JY1/mc/m/n/12 られる塩基配列は ， 通常のベ ースコ ーラ ーの最終層でのビ ームサ
+ ーチにおいてビ ー
  []
 
 [11] [12]
@@ -267,7 +291,7 @@ Overfull \hbox (12.53929pt too wide) in paragraph at lines 392--396
 [14
 
 ] [15]
-Overfull \hbox (0.28262pt too wide) in paragraph at lines 568--569
+Overfull \hbox (0.28262pt too wide) in paragraph at lines 569--570
 []\JY1/mc/m/n/12 提案手法を用いて復号を実施し ， 復号が完了するまでのヒ ープの
 探索数を計
  []
@@ -276,7 +300,7 @@ Overfull \hbox (0.28262pt too wide) in paragraph at lines 568--569
 \@kuee5chapter=\count290
 \@kuee5table=\count291
 
-Overfull \hbox (3.19481pt too wide) in paragraph at lines 664--669
+Overfull \hbox (3.19481pt too wide) in paragraph at lines 665--670
 []\JY1/mc/m/n/12 既存手法と提案手法の復号性能評価では ， テスト用のバイナリデ 
 ータとして 「 こ
  []
@@ -287,19 +311,19 @@ Overfull \hbox (3.19481pt too wide) in paragraph at lines 664--669
 
 
 LaTeX Warning: Reference `eq:appendix_P_STATS' on page 18 undefined on input li
-ne 701.
+ne 702.
 
 
 LaTeX Warning: Reference `tab:appendix_mu_values' on page 18 undefined on input
- line 701.
+ line 702.
 
 
 LaTeX Warning: Reference `tab:appendix_params_p' on page 18 undefined on input 
-line 703.
+line 704.
 
 
 LaTeX Warning: Reference `tab:appendix_params_alpha_beta' on page 18 undefined 
-on input line 703.
+on input line 704.
 
 \@kuee7chapter=\count294
 \@kuee7table=\count295
@@ -308,20 +332,27 @@ on input line 703.
 \@kuee9chapter=\count298
 \@kuee9table=\count299
 
-Overfull \hbox (3.57767pt too wide) in paragraph at lines 705--774
+Overfull \hbox (3.57767pt too wide) in paragraph at lines 706--775
 []\JY1/mc/m/n/12 既存手法と提案手法の復号性能評価における ， ストランド \OT1/cm
 r/m/n/12 1 \JY1/mc/m/n/12 本あたりの平均ヒ ー
  []
 
-[18] [19]
-Overfull \hbox (13.76442pt too wide) in paragraph at lines 813--821
-\JY1/mc/m/n/12 号におけるヒ ープ探索では既存手法 ， 提案手法ともにヒ ープの上限
-サイズは \OT1/cmr/m/n/12 1000000
+
+Overfull \hbox (2.29967pt too wide) in paragraph at lines 706--775
+\JY1/mc/m/n/12 用した場合を表し ， 「\OT1/cmr/m/n/12 CTC+STATS\JY1/mc/m/n/12 」
+ は両方の補正項を適用した場合を表す．          実
  []
 
+
+Overfull \hbox (3.11555pt too wide) in paragraph at lines 706--775
+\JY1/mc/m/n/12 験結果では ， 提案手法を用いることで ， 各符号化率において既存手
+法と比べてヒ ー
+ []
+
+[18] [19]
 \@kuee10chapter=\count300
 \@kuee10figure=\count301
-[20]
+ [20]
 第{5}章.
 [21
 
@@ -421,4 +452,4 @@ Here is how much of TeX's memory you used:
  264 hyphenation exceptions out of 8191
  55i,19n,62p,209b,409s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on bt.dvi (33 pages, 103716 bytes).
+Output written on bt.dvi (33 pages, 103612 bytes).

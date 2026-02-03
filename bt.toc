@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {第{1}章}序論 }{1}{}%
 \contentsline {chapter}{\numberline {第{2}章}DNAストレージの符号化・読み出しプロセス }{3}{}%
-\contentsline {section}{\numberline {2.1}ナノポアシーケンサーとBasecaller}{3}{}%
+\contentsline {section}{\numberline {2.1}ナノポアシーケンサーとベースコーラー}{3}{}%
 \contentsline {section}{\numberline {2.2}HEDGES符号化}{4}{}%
 \contentsline {section}{\numberline {2.3}HEDGES復号}{7}{}%
 \contentsline {section}{\numberline {2.4}既存手法の課題と研究目的}{8}{}%
