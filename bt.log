@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.0-u1.29-230214-2.6 (utf8.euc) (TeX Live 2023/Debian) (preloaded format=platex 2024.10.21)  4 FEB 2026 00:11
+This is e-upTeX, Version 3.141592653-p4.1.0-u1.29-230214-2.6 (utf8.euc) (TeX Live 2023/Debian) (preloaded format=platex 2024.10.21)  4 FEB 2026 00:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -248,7 +248,7 @@ Overfull \hbox (0.28262pt too wide) in paragraph at lines 163--165
  []
 
 [4] [5] [6] [7]
-Overfull \hbox (0.2959pt too wide) in paragraph at lines 307--314
+Overfull \hbox (0.2959pt too wide) in paragraph at lines 315--322
 \JY1/mc/m/n/12 み出しを行う場合の詳細な出力特性に基づいた報酬とペナルテ ィ の最
 適化に
  []
@@ -256,35 +256,35 @@ Overfull \hbox (0.2959pt too wide) in paragraph at lines 307--314
 [8] [9]
 第{3}章.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 339.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 347.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 339.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 347.
 [10
 
 ]
 \@kuee3chapter=\count288
 \@kuee3figure=\count289
 
-Overfull \hbox (0.30995pt too wide) in paragraph at lines 378--391
+Overfull \hbox (0.30995pt too wide) in paragraph at lines 386--399
 []\OT1/cmr/m/n/12 2.1 \JY1/mc/m/n/12 節で説明したように ， ベ ースコ ーラ ーは
 通常 ， \OT1/cmr/m/n/12 CTC \JY1/mc/m/n/12 出力に対してビ ームサ ー
  []
 
 
-Overfull \hbox (6.0233pt too wide) in paragraph at lines 378--391
+Overfull \hbox (6.0233pt too wide) in paragraph at lines 386--399
 \JY1/mc/m/n/12 チを用いて最終的に塩基配列を出力するが ， 本研究の提案手法ではベ
  ースコ ーラ ー
  []
 
 
-Overfull \hbox (12.53929pt too wide) in paragraph at lines 392--396
+Overfull \hbox (12.53929pt too wide) in paragraph at lines 400--404
 \JY1/mc/m/n/12 さに依存する時系列長であり， 各行は各時点における \OT1/cmr/m/n/1
 2 5 \JY1/mc/m/n/12 種類のラベル $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 N; A; C; G;
  T\OMS/cmsy/m/n/12 g$
  []
 
 
-Overfull \hbox (6.0233pt too wide) in paragraph at lines 401--412
+Overfull \hbox (6.0233pt too wide) in paragraph at lines 409--420
 \JY1/mc/m/n/12 られる塩基配列は ， 通常のベ ースコ ーラ ーの最終層でのビ ームサ
  ーチにおいてビ ー
  []
@@ -295,7 +295,7 @@ Overfull \hbox (6.0233pt too wide) in paragraph at lines 401--412
  [13]
 第{4}章.
 
-Overfull \hbox (6.25966pt too wide) in paragraph at lines 512--530
+Overfull \hbox (6.25966pt too wide) in paragraph at lines 520--538
 \JY1/mc/m/n/12 符号化した複数の \OT1/cmr/m/n/12 DNA \JY1/mc/m/n/12 鎖に対し ， 
 ナノポアシ ーケンサ ーによる電流波形を \OT1/cmr/m/n/12 Squigu-
  []
@@ -303,13 +303,13 @@ Overfull \hbox (6.25966pt too wide) in paragraph at lines 512--530
 [14
 
 ] [15]
-Overfull \hbox (0.28262pt too wide) in paragraph at lines 568--569
+Overfull \hbox (0.28262pt too wide) in paragraph at lines 576--577
 []\JY1/mc/m/n/12 提案手法を用いて復号を実施し ， 復号が完了するまでのヒ ープの
 探索数を計
  []
 
 
-Overfull \hbox (0.22108pt too wide) in paragraph at lines 591--603
+Overfull \hbox (0.22108pt too wide) in paragraph at lines 599--611
 \JY1/mc/m/n/12 の最終的なビ ッ ト誤り率を計測する ． 既存手法を用いた復号では 
 ， ベ ースコ ーラ ー
  []
@@ -318,7 +318,7 @@ Overfull \hbox (0.22108pt too wide) in paragraph at lines 591--603
 \@kuee5chapter=\count292
 \@kuee5table=\count293
 
-Overfull \hbox (3.19481pt too wide) in paragraph at lines 664--669
+Overfull \hbox (3.19481pt too wide) in paragraph at lines 672--677
 []\JY1/mc/m/n/12 既存手法と提案手法の復号性能評価では ， テスト用のバイナリデ 
 ータとして 「 こ
  []
@@ -329,19 +329,19 @@ Overfull \hbox (3.19481pt too wide) in paragraph at lines 664--669
 
 
 LaTeX Warning: Reference `eq:appendix_P_STATS' on page 18 undefined on input li
-ne 701.
+ne 709.
 
 
 LaTeX Warning: Reference `tab:appendix_mu_values' on page 18 undefined on input
- line 701.
+ line 709.
 
 
 LaTeX Warning: Reference `tab:appendix_params_p' on page 18 undefined on input 
-line 703.
+line 711.
 
 
 LaTeX Warning: Reference `tab:appendix_params_alpha_beta' on page 18 undefined 
-on input line 703.
+on input line 711.
 
 \@kuee7chapter=\count296
 \@kuee7table=\count297
@@ -458,4 +458,4 @@ Here is how much of TeX's memory you used:
  264 hyphenation exceptions out of 8191
  57i,19n,65p,209b,414s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on bt.dvi (33 pages, 103268 bytes).
+Output written on bt.dvi (33 pages, 104020 bytes).
