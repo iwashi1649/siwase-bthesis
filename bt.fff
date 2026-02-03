@@ -89,7 +89,7 @@
 \begin{table*}
 
   \centering
-  \caption{ストランド1本あたりの平均ヒープ探索数}
+  \caption{DNA鎖1本あたりの平均ヒープ探索数}
   \label{tab:results_heap}
   \begin{tabular}{c|cccc}
     \hline
