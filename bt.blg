@@ -7,46 +7,46 @@ Warning--entry type for "bonito" isn't style-file defined
 --line 77 of file reference.bib
 Warning--entry type for "statista_worldwide_data_created" isn't style-file defined
 --line 187 of file reference.bib
-You've used 18 entries,
+You've used 20 entries,
             2383 wiz_defined-function locations,
-            684 strings with 7322 characters,
-and the built_in function-call counts, 6436 in all, are:
-= -- 591
-> -- 207
-< -- 34
-+ -- 81
-- -- 63
-* -- 360
-:= -- 795
-add.period$ -- 18
-call.type$ -- 18
-change.case$ -- 20
+            699 strings with 7699 characters,
+and the built_in function-call counts, 7302 in all, are:
+= -- 676
+> -- 230
+< -- 40
++ -- 90
+- -- 70
+* -- 413
+:= -- 895
+add.period$ -- 20
+call.type$ -- 20
+change.case$ -- 22
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 376
-empty$ -- 512
-format.name$ -- 126
-if$ -- 1617
+cite$ -- 20
+duplicate$ -- 428
+empty$ -- 578
+format.name$ -- 140
+if$ -- 1836
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 13
-newline$ -- 57
-num.names$ -- 18
-pop$ -- 98
+int.to.str$ -- 20
+missing$ -- 15
+newline$ -- 63
+num.names$ -- 20
+pop$ -- 106
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 397
+skip$ -- 451
 stack$ -- 0
-substring$ -- 329
-swap$ -- 143
-text.length$ -- 34
+substring$ -- 389
+swap$ -- 167
+text.length$ -- 40
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 42
-width$ -- 20
-write$ -- 211
-is.kanji.str$ -- 219
+while$ -- 49
+width$ -- 22
+write$ -- 235
+is.kanji.str$ -- 246
 (There were 2 warnings)

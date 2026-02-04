@@ -52,20 +52,30 @@ William~H. Press, John~A. Hawkins, Stephen~K. Jones, Jeffrey~M. Schaub, and
   indels and allows sequence constraints, {\em Proceedings of the National
   Academy of Sciences\/}, Vol. 117, No.~31, (2020), pp. 18489--18496.
 
-\bibitem{bonito}
-{Chris Seymour, Oxford Nanopore Technologies Ltd.}, Bonito: A pytorch
-  basecaller for oxford nanopore reads, (2019), Oxford Nanopore Technologies,
-  Ltd. Public License, v. 1.0.
-
 \bibitem{Gervasio}
 Joao Gervasio, Henrique Oliveira, Andr^^c3^^a9 Costa~Martins, Joao Pesquero,
   Bruno Verona, and Natalia Cerize, How close are we to storing data in dna?,
   {\em Trends in Biotechnology\/}, Vol.~42, (2023).
 
+\bibitem{landsman2023the}
+Dave Landsman and Karin Strauss, The dna data storage model, {\em IEEE
+  Computer\/}, Vol.~56, No.~7, (2023), pp. 78--85.
+
+\bibitem{Grass2015Robust}
+Robert~N. Grass, Reinhard Heckel, Michela Puddu, Daniela Paunescu, and
+  Wendelin~J. Stark, Robust chemical preservation of digital information on dna
+  in silica with error-correcting codes, {\em Angewandte Chemie International
+  Edition\/}, Vol.~54, No.~8, (2015), pp. 2552--2555.
+
 \bibitem{Astar}
 Peter~E. Hart, Nils~J. Nilsson, and Bertram Raphael, A formal basis for the
   heuristic determination of minimum cost paths, {\em IEEE Transactions on
   Systems Science and Cybernetics\/}, Vol.~4, No.~2, (1968), pp. 100--107.
+
+\bibitem{bonito}
+{Chris Seymour, Oxford Nanopore Technologies Ltd.}, Bonito: A pytorch
+  basecaller for oxford nanopore reads, (2019), Oxford Nanopore Technologies,
+  Ltd. Public License, v. 1.0.
 
 \bibitem{GOTOH1982705}
 Osamu Gotoh, An improved algorithm for matching biological sequences, {\em
