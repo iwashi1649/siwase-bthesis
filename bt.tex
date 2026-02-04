@@ -351,8 +351,10 @@ HEDGES復号アルゴリズムにおける報酬とペナルティに関して�
 CTC出力の扱いについて説明し，その後にこれらを報酬とペナルティに反映させる手法について述べる．
 
 \subsection{ナノポアシーケンサーの読み出し特性のモデル化} \label{stat_model}
+ナノポアシーケンサーの読み出し特性をモデル化するために，事前に統計的なエラー率を
+表現する遷移行列を作成する．
 塩基配列の読み出しにおいて，読み出し後の塩基配列と本来の塩基配列が分かっているとき，
-シーケンスアライメントと呼ばれる手法を用いてこの2つの塩基配列を比較し，
+シーケンスアラインメントと呼ばれる手法を用いてこの2つの塩基配列を比較し，
 一致部分や各種エラーの発生箇所を特定することができる
 \cite{GOTOH1982705}．
 アラインメントされた2つの塩基配列において，対応する塩基のペアが一致している場合は正しい
@@ -403,7 +405,7 @@ DNA読み出しにおける正しい読み出しと
     \end{center}
 \end{figure}
 
-CTC出力が$N\times 5$行列$\bm{S}$で与えられるとする．ここで，$N$は入力電流信号の長さに依存する
+CTC出力が$L\times 5$行列$\bm{S}$で与えられるとする．ここで，$L$は入力電流信号の長さに依存する
 時系列長であり，各行は各時点における5種類のラベル$\{N,A,C,G,T\}$に対する
 出力確率を表す．$\bm{S}$に対して，\ref{nanopore}節で説明したCollapseに相当する
 以下の処理を適用して$\bm{S}'$を得る．
@@ -412,9 +414,9 @@ CTC出力が$N\times 5$行列$\bm{S}$で与えられるとする．ここで，$
   各ラベルの確率の平均をとり，1行にまとめた行列を$\bm{S}'$とする．
   \item $\bm{S}'$から，空白ラベル(N)に対する確率が最大となっている行を削除する．
 \end{enumerate}
-これにより得られた行列$\bm{S}'$の各行で確率が最大となる塩基を選択することで
-得られる塩基配列は，通常のベースコーラーの最終層でのビームサーチにおいてビーム幅を1と
-した場合のベースコール結果に相当する．
+% なお，これにより得られた行列$\bm{S}'$の各行で確率が最大となる塩基を選択することで
+% 得られる塩基配列は，通常のベースコーラーの最終層でのビームサーチにおいてビーム幅を1と
+% した場合のベースコール結果に相当する．
 $\bm{S}'$の各要素に対して自然対数をとって$-1$を乗じた行列を$\bm{P}_{CTC}$とおく．
 $\bm{P}_{CTC}$の各列の要素は，各時点において各塩基または空白が出力される
 確率に基づくスコアを表す．
@@ -432,41 +434,41 @@ $\bm{P}_{CTC}$から取得し，これを用いて報酬やペナルティを決
 ペナルティ$P'_{sub}$，$P'_{ins}$，$P'_{del}$を提案し，以下のように定義する．
 \begin{equation}
   \begin{split}
-    P'_{ok} = P_{ok} &+ \alpha_{ok}(\bm{P}_{STATS}[x_{hypo}, x_{max}[i]]-\mu_{STATS\_ok}) \label{opt1} \\ 
-   &+ \beta_{ok}(\bm{P}_{CTC}[i, x_{hypo}]-\mu_{CTC\_ok}) 
+    P'_{ok} = P_{ok} &+ \alpha_{ok}(\bm{P}_{STATS}(x_{hypo}, x_{max}(i))-\mu_{STATS\_ok}) \label{opt1} \\ 
+   &+ \beta_{ok}(\bm{P}_{CTC}(i, x_{hypo})-\mu_{CTC\_ok}) 
   \end{split}
 \end{equation}
 \begin{equation}
   \begin{split}
-    P'_{sub} = P_{sub} &+ \alpha_{sub}(\bm{P}_{STATS}[x_{hypo}, x_{max}[i]]-\mu_{STATS\_sub}) \label{opt2} \\
-    &+ \beta_{sub}(\bm{P}_{CTC}[i, x_{hypo}]-\mu_{CTC\_sub})
+    P'_{sub} = P_{sub} &+ \alpha_{sub}(\bm{P}_{STATS}(x_{hypo}, x_{max}(i))-\mu_{STATS\_sub}) \label{opt2} \\
+    &+ \beta_{sub}(\bm{P}_{CTC}(i, x_{hypo})-\mu_{CTC\_sub})
   \end{split}
 \end{equation}
 \begin{equation}
   \begin{split}
-    P'_{ins} = P_{ins} &+ \alpha_{ins}(\bm{P}_{STATS}[N, x_{max}[i-1]]-\mu_{STATS\_ins}) \label{opt3}\\
-    &+ \beta_{ins}(\bm{P}_{CTC}[i-1, x_{hypo}]-\mu_{CTC\_ins})
+    P'_{ins} = P_{ins} &+ \alpha_{ins}(\bm{P}_{STATS}(N, x_{max}(i-1))-\mu_{STATS\_ins}) \label{opt3}\\
+    &+ \beta_{ins}(\bm{P}_{CTC}(i-1, x_{hypo})-\mu_{CTC\_ins})
   \end{split}
 \end{equation}
 \begin{equation}
   \begin{split}
-    P'_{del} = P_{del} &+ \alpha_{del}(\bm{P}_{STATS}[x_{hypo}, N]-\mu_{STATS\_del}) \label{opt4}
+    P'_{del} = P_{del} &+ \alpha_{del}(\bm{P}_{STATS}(x_{hypo}, N)-\mu_{STATS\_del}) \label{opt4}
   \end{split}
 \end{equation}
 ここで，$x_{hypo}$は仮説のビット列から出力される塩基を表し，$i$は仮説が参照する
-$\bm{P}_{CTC}$の行番号を表す．また，$x_{max}[i]$は$\bm{P}_{CTC}$の$i$行目において
-出力確率が最大となる塩基を表す．$\bm{P}_{STATS}[X,Y]\quad(x,y\in \{N,A,C,G,T\})$は$\bm{P}_{STATS}$における
+$\bm{P}_{CTC}$の行番号を表す．また，$x_{max}(i)$は$\bm{P}_{CTC}$の$i$行目において
+出力確率が最大となる塩基を表す．$\bm{P}_{STATS}(X,Y)\quad(x,y\in \{N,A,C,G,T\})$は$\bm{P}_{STATS}$における
 ラベル$x$からラベル$y$への遷移に対応するスコアを表す．
-$\bm{P}_{CTC}[i,X]$は，$\bm{P}_{CTC}$の$i$行目におけるラベル$X$のスコアを表す．
+$\bm{P}_{CTC}(i,X)$は，$\bm{P}_{CTC}$の$i$行目におけるラベル$X$のスコアを表す．
 $\mu_{STATS\_ok}$，$\mu_{STATS\_sub}$，
 $\mu_{STATS\_ins}$，$\mu_{STATS\_del}$はそれぞれ，正しい読み出し，置換エラー，
 挿入エラー，消失エラー発生したときの$\bm{P}_{STATS}$のスコアの期待値を表し，
 % すなわち
 % \begin{align}
-%   \mu_{STATS\_ok} &= \dfrac{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XX} \bm{P}_{STATS}[X,X]}{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XX}} \\
-%   \mu_{STATS\_sub} &= \dfrac{\displaystyle \sum_{X,Y \in \{A,C,G,T\}, X \neq Y} p_{XY} \bm{P}_{STATS}[X,Y]}{\displaystyle \sum_{X,Y \in \{A,C,G,T\}, X \neq Y} p_{XY}} \\
-%   \mu_{STATS\_ins} &= \dfrac{\displaystyle \sum_{Y \in \{A,C,G,T\}} p_{NY} \bm{P}_{STATS}[N,Y]}{\displaystyle \sum_{Y \in \{A,C,G,T\}} p_{NY}} \\
-%   \mu_{STATS\_del} &= \dfrac{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XN} \bm{P}_{STATS}[X,N]}{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XN}}
+%   \mu_{STATS\_ok} &= \dfrac{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XX} \bm{P}_{STATS}(X,X)}{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XX}} \\
+%   \mu_{STATS\_sub} &= \dfrac{\displaystyle \sum_{X,Y \in \{A,C,G,T\}, X \neq Y} p_{XY} \bm{P}_{STATS}(X,Y)}{\displaystyle \sum_{X,Y \in \{A,C,G,T\}, X \neq Y} p_{XY}} \\
+%   \mu_{STATS\_ins} &= \dfrac{\displaystyle \sum_{Y \in \{A,C,G,T\}} p_{NY} \bm{P}_{STATS}(N,Y)}{\displaystyle \sum_{Y \in \{A,C,G,T\}} p_{NY}} \\
+%   \mu_{STATS\_del} &= \dfrac{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XN} \bm{P}_{STATS}(X,N)}{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XN}}
 % \end{align}
 % である．
 $\mu_{CTC\_ok}$，$\mu_{CTC\_sub}$，
@@ -481,11 +483,11 @@ $\beta_{ok}$，$\beta_{sub}$，$\beta_{ins}$が乗じられており，
 % まず，仮説のビット列から出力される塩基を$x_{hypo}$とする．
 % また，仮説が参照する$\bm{P}_{CTC}$の行番号を$i$とする．
 % このとき，$\bm{P}_{CTC}$の$i$行目において出力確率が最大となる塩基を
-% $x_{max}[i]$とする．
+% $x_{max}(i)$とする．
 
 \section{ロングリードに向けた符号化アルゴリズムの改良} \label{long_read_encoding}
 \ref{sec:problem}節で述べたように，既存のHEDGES符号化・復号手法では
-DNAの塩基長を長くすると復号精度が低下することが知られている．
+DNAの塩基長を長くすると復号精度が低下する．
 これは，復号アルゴリズムにおいて仮説数がヒープサイズの上限に達した場合に
 復号失敗としてその後のビット列をすべて消失として扱うため，
 塩基長が大きくなるほど復号失敗の発生率が高くなることに起因している．
@@ -499,16 +501,18 @@ DNA鎖のID，ビット位置，直前のビット列に基づく
 そのため，例えばDNA鎖のある位置でバースト誤りが発生した場合，
 後続の塩基配列の復号に対しても連鎖的に影響を及ぼし，正しい復号経路の
 探索が困難になる．
-そこで，提案手法では図\ref{fig:segment}のように長い塩基配列を数百nt程度の複数の短いセグメントに分割し，
+そこで，提案手法では図\ref{fig:segment}のように長い塩基配列を400ntのセグメントに分割し，
 各セグメントの先頭で，ハッシュ関数の入力として用いるビット位置$I_i$と
-直前のビット列情報$B_i$を0にリセットして符号化する．
+直前のビット列情報$B_i$を0に初期化して符号化する．
 セグメントの区切り位置を特定するために，隣接するセグメント間には
 特定のパターンを持つ10塩基程度のセパレータを挿入する．
+セパレータのパターンとしては，ホモポリマーがなく，GC含量が50\%程度となるような
+塩基配列を選択する．本手法では”GTACTGCATG”という塩基配列をセパレータとして用いる．
 復号時にはまず，セパレータの位置として予想される位置から前後30塩基程度の範囲を
 探索し，セパレータのパターンに一致または類似する塩基配列を検出する．
 セパレータの位置が特定できたら，各セグメントごとに
 \ref{hedges_decoding}節で説明した復号アルゴリズムを適用し，
-各セグメントの先頭では$I_i$と$B_i$を0にリセットした上でヒープを初期化して
+各セグメントの先頭では$I_i$と$B_i$を0に初期化した上でヒープを初期化して
 復号を行う．
 これにより，ヒープサイズが上限を超えることによる復号失敗を抑制し，
 復号失敗が発生した場合でも，その影響をセグメント内だけに限定することができ，
@@ -556,12 +560,12 @@ $\mu_{CTC\_ok}$，$\mu_{CTC\_sub}$，
 $\mu_{CTC\_ins}$はそれぞれ，$\bm{P}_{CTC}$において
 正しい読み出し，置換エラー，挿入エラーに対応するスコアの期待値であるから，
 \begin{align}
-  \mu_{CTC\_ok} &= \dfrac{1}{N}\sum_n \sum_i \bm{P}_{CTC}^{(n)}[i, C'^{(n)}_i] \\
-  \mu_{CTC\_sub} &= \dfrac{1}{3N}\sum_n \sum_i \sum_{X \in \{A,C,G,T\}, X \neq C'^{(n)}_i} \bm{P}_{CTC}^{(n)}[i, X] \\
-  \mu_{CTC\_ins} &= \dfrac{1}{N}\sum_n \sum_i \bm{P}_{CTC}^{(n)}[i, N]
+  \mu_{CTC\_ok} &= \dfrac{1}{M}\sum_n \sum_i \bm{P}_{CTC}^{(n)}[i, C'^{(n)}_i] \\
+  \mu_{CTC\_sub} &= \dfrac{1}{3M}\sum_n \sum_i \sum_{X \in \{A,C,G,T\}, X \neq C'^{(n)}_i} \bm{P}_{CTC}^{(n)}[i, X] \\
+  \mu_{CTC\_ins} &= \dfrac{1}{M}\sum_n \sum_i \bm{P}_{CTC}^{(n)}[i, N]
 \end{align}
 により計算される．
-ただし，$N$はベースコールされた全てのDNA鎖における塩基数の総和を表す．
+ただし，$M$はベースコールされた全てのDNA鎖における塩基数の総和を表す．
 
 次に，式\eqref{opt1}から\eqref{opt4}に示した
 固定の報酬とペナルティ$P_{ok}, P_{sub}, P_{ins}, P_{del}$
@@ -842,7 +846,7 @@ CTC出力に対して\ref{ctc_output}節で説明した方法で得られた$\bm
 ほぼ変化しなかった．
 既存手法における復号精度の低下は，
 復号におけるヒープ探索数の増加に伴う復号失敗率の増加が主な要因であり，
-提案手法ではセグメントごとにハッシュ関数の入力とヒープをリセットすることで，
+提案手法ではセグメントごとにハッシュ関数の入力とヒープを初期化することで，
 ヒープサイズを抑えつつ，復号失敗が発生した場合においても
 次のセグメントからの復号を継続できるため，復号精度の低下を抑制できたと考えられる．
 \begin{figure}
