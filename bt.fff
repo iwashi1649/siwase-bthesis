@@ -91,14 +91,17 @@
   \centering
   \caption{DNA鎖1本あたりの平均ヒープ探索数}
   \label{tab:results_heap}
-  \begin{tabular}{c|cccc}
+  \begin{tabular}{c|c|cccc}
     \hline
-    code rate & 0.75 & 0.6 & 0.5 & 0.33 \\
+    \multicolumn{2}{c|}{符号化率} & 0.75 & 0.6 & 0.5 & 0.33 \\
     \hline
-    Default & 135550 & 45219 & 21291 & 12290 \\
-    STATS & 77281 & 23707 & 10893 & 4785 \\
-    CTC & 53098 & 17966 & 9353 & 4354 \\
-    CTC+STATS & 48507 & 14972 & 7625 & 3894 \\
+    \multicolumn{2}{c|}{既存手法} & 135550 & 45219 & 21291 & 12290 \\
+    \hline
+    \multirow{3}{*}{提案手法} & STATSのみ & 77281 & 23707 & 10893 & 4785 \\
+    \cline{2-6}
+     & CTCのみ & 53098 & 17966 & 9353 & 4354 \\
+    \cline{2-6}
+     & STATS+CTC & 48507 & 14972 & 7625 & 3894 \\
     \hline
   \end{tabular}
 \end{table*}
@@ -109,14 +112,17 @@
   \centering
   \caption{ビット消失率}
   \label{tab:results_deletion}
-  \begin{tabular}{c|cccc}
+  \begin{tabular}{c|c|cccc}
     \hline
-    code rate & 0.75 & 0.6 & 0.5 & 0.33 \\
+    \multicolumn{2}{c|}{符号化率} & 0.75 & 0.6 & 0.5 & 0.33 \\
     \hline
-    Default & 0.03083 & 0.00949 & 0.00341 & 0.00328 \\
-    STATS & 0.00741 & 0.00376 & 0.00121 & 0.00076 \\
-    CTC & 0.00789 & 0.00265 & 0.00111 & 0.00055 \\
-    CTC+STATS & 0.00693 & 0.00229 & 0.00069 & 0.00056 \\
+    \multicolumn{2}{c|}{既存手法} & 0.03083 & 0.00949 & 0.00341 & 0.00328 \\
+    \hline
+    \multirow{3}{*}{提案手法} & STATSのみ & 0.00741 & 0.00376 & 0.00121 & 0.00076 \\
+    \cline{2-6}
+     & CTCのみ & 0.00789 & 0.00265 & 0.00111 & 0.00055 \\
+    \cline{2-6}
+     & STATS+CTC & 0.00693 & 0.00229 & 0.00069 & 0.00056 \\
     \hline
   \end{tabular}
 \end{table*}
@@ -127,14 +133,17 @@
   \centering
   \caption{RS復号後のビット誤り率}
   \label{tab:results_final_ber}
-  \begin{tabular}{c|cccc}
+  \begin{tabular}{c|c|cccc}
     \hline
-    code rate & 0.75 & 0.6 & 0.5 & 0.33 \\
+    \multicolumn{2}{c|}{符号化率} & 0.75 & 0.6 & 0.5 & 0.33 \\
     \hline
-    Default & 0.022981 & $<10^{-6}$ & $<10^{-6}$ & $<10^{-6}$ \\
-    STATS & 0.059977 & $<10^{-6}$ & $<10^{-6}$ & $<10^{-6}$ \\
-    CTC & 0.008228 & $<10^{-6}$ & $<10^{-6}$ & $<10^{-6}$ \\
-    CTC+STATS & 0.005173 & $<10^{-6}$ & $<10^{-6}$ & $<10^{-6}$ \\
+    \multicolumn{2}{c|}{既存手法} & 0.022981 & $<10^{-6}$ & $<10^{-6}$ & $<10^{-6}$ \\
+    \hline
+    \multirow{3}{*}{提案手法} & STATSのみ & 0.059977 & $<10^{-6}$ & $<10^{-6}$ & $<10^{-6}$ \\
+    \cline{2-6}
+     & CTCのみ & 0.008228 & $<10^{-6}$ & $<10^{-6}$ & $<10^{-6}$ \\
+    \cline{2-6}
+     & STATS+CTC & 0.005173 & $<10^{-6}$ & $<10^{-6}$ & $<10^{-6}$ \\
     \hline
   \end{tabular}
 \end{table*}
