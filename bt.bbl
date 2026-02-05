@@ -86,15 +86,15 @@ Hasindu Gamaarachchi, James~M Ferguson, Hiruna Samarakoon, Kisaru Liyanage, and
   Ira~W Deveson, Squigulator: simulation of nanopore sequencing signal data
   with tunable noise parameters, {\em bioRxiv\/}, (2023), pp. 2023--05.
 
+\bibitem{kokoro}
+夏目漱石, こころ, (1914), https://www.aozora.gr.jp/cards/000148/card773.html.
+
 \bibitem{biopython}
 Peter J.~A. Cock, Tiago Antao, Jeffrey~T. Chang, Brad~A. Chapman, Cymon~J. Cox,
   Andrew Dalke, Iddo Friedberg, Thomas Hamelryck, Frank Kauff, Bartek
   Wilczynski, and Michiel J.~L. de~Hoon, Biopython: freely available python
   tools for computational molecular biology and bioinformatics, {\em
   Bioinformatics\/}, Vol.~25, No.~11, (2009), pp. 1422--1423.
-
-\bibitem{kokoro}
-夏目漱石, こころ, (1914), https://www.aozora.gr.jp/cards/000148/card773.html.
 
 \bibitem{10.1371/journal.pone.0257521}
 Clara Delahaye and Jacques Nicolas, Sequencing dna with nanopores: Troubles and

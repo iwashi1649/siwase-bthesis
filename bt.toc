@@ -15,12 +15,16 @@
 \contentsline {chapter}{\numberline {第{4}章}シミュレーション }{15}{}%
 \contentsline {section}{\numberline {4.1}復号の探索効率化}{15}{}%
 \contentsline {subsection}{\numberline {4.1.1}実験方法}{15}{}%
-\contentsline {subsection}{\numberline {4.1.2}実験条件}{18}{}%
-\contentsline {subsection}{\numberline {4.1.3}結果と考察}{19}{}%
-\contentsline {section}{\numberline {4.2}ロングリードに向けた符号化アルゴリズムの改良}{20}{}%
-\contentsline {subsection}{\numberline {4.2.1}実験手法}{20}{}%
-\contentsline {subsection}{\numberline {4.2.2}実験条件}{21}{}%
-\contentsline {subsection}{\numberline {4.2.3}結果と考察}{21}{}%
-\contentsline {chapter}{\numberline {第{5}章}結論 }{22}{}%
-\contentsline {chapter}{謝 辞}{23}{}%
-\contentsline {chapter}{参 考 文 献}{24}{}%
+\contentsline {subsection}{\numberline {4.1.2}実験条件}{16}{}%
+\contentsline {subsection}{\numberline {4.1.3}結果と考察}{16}{}%
+\contentsline {section}{\numberline {4.2}ロングリードに向けた符号化アルゴリズムの改良}{17}{}%
+\contentsline {subsection}{\numberline {4.2.1}実験手法}{17}{}%
+\contentsline {subsection}{\numberline {4.2.2}実験条件}{18}{}%
+\contentsline {subsection}{\numberline {4.2.3}結果と考察}{18}{}%
+\contentsline {chapter}{\numberline {第{5}章}結論 }{19}{}%
+\contentsline {chapter}{謝 辞}{20}{}%
+\contentsline {chapter}{参 考 文 献}{21}{}%
+\contentsline {chapter}{\numberline {付 録{A} }復号の探索効率化における予備実験 }{24}{}%
+\contentsline {section}{\numberline {A.1}実験方法}{24}{}%
+\contentsline {section}{\numberline {A.2}実験条件}{26}{}%
+\contentsline {section}{\numberline {A.3}結果}{27}{}%
