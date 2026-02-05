@@ -153,6 +153,13 @@ HEDGESではデータをパケット単位で扱う．
 符号化はビット列から誤り訂正能力をもたせたビット列への変換を行う
 リードソロモン(RS)符号化と，そのビット列からさらに冗長性を付加させた
 塩基配列に変換するHEDGES符号化の2段階で行う．
+図\ref{fig:hedges_encoding}にHEDGES符号化の概要を示す．
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=150mm]{hedges.png}
+        \caption{HEDGES符号化の概要}\label{fig:hedges_encoding}
+    \end{center}
+\end{figure}
 はじめに，バイナリデータをパケット単位に分割し，
 各パケットのビット列に対してRS符号化を適用し，1パケット分のビット列を得る．
 このRS符号は外部符号と呼び，塩基配列からビット列への復号の際に発生したエラーを
@@ -243,13 +250,21 @@ ID部分の符号化では$S_i=0$とされる．ビット列を符号化して�
 \subsection{復号} \label{hedges_decoding}
 HEDGESで符号化された塩基配列から元のデータを復元するには，まずHEDGES復号により
 置換・挿入・消失エラーを訂正しながら塩基配列からビット列への復元を行い，
-次に外部符号であるRS符号の復号を行うことで，HEDGES復号で復元に失敗したビット列の訂正を行う．
+次に外部符号であるRS符号の復号を行うことで，HEDGES復号で復元に失敗したビット列の訂正を行う(図\ref{fig:hedges_encoding})．
 HEDGES復号では
 Greedy Exhaustive Search(貪欲探索法)に基づく復号アルゴリズムを用いる\cite{Astar}．
-このアルゴリズムはビット列の候補に基づくヒープ構造を探索することで，
+このアルゴリズムは
+図\ref{fig:heap}に示すような
+ビット列の候補に基づくヒープ構造を探索することで，
 入力された塩基配列に対して尤もらしいビット列を選定する手法である．
 各要素には候補のビット列と，挿入と消失を仮定するskewと呼ばれるパラメータが存在する．
 skewは参照塩基を現在の位置からどれだけずらすかを表し，$\Delta \in \{-1, 0, 1\}$で表される．
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=100mm]{heap.png}
+        \caption{HEDGES復号におけるヒープ構造}\label{fig:heap}
+    \end{center}
+\end{figure}
 復号プロセスとしては，まずビット列$v_i$とskew$\Delta$の全ての組み合わせに対して
 候補を生成し，ヒープに追加する．
 各候補において，その$v_i$から式\eqref{encode}を用いて予測される

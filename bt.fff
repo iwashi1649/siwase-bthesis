@@ -1,6 +1,24 @@
 \begin{figure*}
 
     \begin{center}
+        \includegraphics[width=150mm]{hedges.png}
+        \caption{HEDGES符号化の概要}\label{fig:hedges_encoding}
+    \end{center}
+\end{figure*}
+\kueeseparator
+ 
+\begin{figure*}
+
+    \begin{center}
+        \includegraphics[width=100mm]{heap.png}
+        \caption{HEDGES復号におけるヒープ構造}\label{fig:heap}
+    \end{center}
+\end{figure*}
+\kueeseparator
+ 
+\begin{figure*}
+
+    \begin{center}
         \includegraphics[width=150mm]{nanopore.png}
         \caption{ナノポアシーケンサーの原理と手順}\label{fig:nanopore}
     \end{center}
