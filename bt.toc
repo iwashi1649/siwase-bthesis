@@ -1,18 +1,18 @@
 \contentsline {chapter}{\numberline {第{1}章}序論 }{1}{}%
-\contentsline {chapter}{\numberline {第{2}章}DNAストレージの符号化・読み出しプロセス }{3}{}%
+\contentsline {chapter}{\numberline {第{2}章}DNAストレージの符号化と読み出し }{3}{}%
 \contentsline {section}{\numberline {2.1}DNAストレージの概要}{3}{}%
 \contentsline {section}{\numberline {2.2}HEDGES}{4}{}%
 \contentsline {subsection}{\numberline {2.2.1}符号化}{4}{}%
 \contentsline {subsection}{\numberline {2.2.2}復号}{6}{}%
 \contentsline {section}{\numberline {2.3}ナノポアシーケンサーとベースコーラー}{7}{}%
 \contentsline {section}{\numberline {2.4}既存手法の課題と研究目的}{8}{}%
-\contentsline {chapter}{\numberline {第{3}章}提案手法 }{10}{}%
+\contentsline {chapter}{\numberline {第{3}章}ナノポアシーケンサーによる読み出しを前提とした誤り訂正手法 }{10}{}%
 \contentsline {section}{\numberline {3.1}復号の探索効率化}{10}{}%
 \contentsline {subsection}{\numberline {3.1.1}ナノポアシーケンサーの読み出し特性のモデル化}{10}{}%
 \contentsline {subsection}{\numberline {3.1.2}CTC出力の扱い}{11}{}%
 \contentsline {subsection}{\numberline {3.1.3}報酬とペナルティの最適化}{12}{}%
 \contentsline {section}{\numberline {3.2}ロングリードに向けた符号化アルゴリズムの改良}{13}{}%
-\contentsline {chapter}{\numberline {第{4}章}シミュレーション }{15}{}%
+\contentsline {chapter}{\numberline {第{4}章}シミュレーション評価 }{15}{}%
 \contentsline {section}{\numberline {4.1}復号の探索効率化}{15}{}%
 \contentsline {subsection}{\numberline {4.1.1}実験方法}{15}{}%
 \contentsline {subsection}{\numberline {4.1.2}実験条件}{16}{}%

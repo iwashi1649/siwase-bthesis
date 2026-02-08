@@ -44,7 +44,7 @@ Simulation results demonstrate that the proposed method improves
 both decoding efficiency and accuracy. The optimized decoding algorithm reduces 
 heap search operations by 64-68\% and bit deletion rates by 76-83\% compared to 
 the existing method. The segmentation scheme maintains stable decoding accuracy 
-even for DNA sequences up to 15,000nt without significantly increasing computational 
+even for DNA sequences up to 15,000\,nt without significantly increasing computational 
 complexity. 
 % After Reed-Solomon outer decoding, the proposed method achieves a 77\% 
 % error rate reduction at 0.75 coding rate compared to the existing method. These 
@@ -60,12 +60,12 @@ complexity.
 2025年の報告では
 全世界のデジタルデータ量は173.4ゼタバイトにのぼると推定され，
 2029年には527.5ゼタバイトに達すると予測されている\cite{statista_worldwide_data_created}．
-これらの大量のデータのうち，約60\%はアクセス頻度の極めて低いコールドデータであることが
+これら大量のデータのうち，約60\%はアクセス頻度の極めて低いコールドデータであることが
 知られている\cite{dna_data_storage_alliance_2021_intro}．
 コールドデータの中には，法令に基づき長期間保存が義務付けられているものや，
 将来的に解析される可能性のある研究データなどが含まれており，
 これらを消去することは困難である．
-そのため，コールドデータを安価で長期間保存できるアーカイブストレージ技術が
+そのため，コールドデータを安価に長期間保存できるアーカイブストレージ技術が
 求められている\cite{reinsel2017dataage2025,dna_data_storage_alliance_2021_intro}．
 
 %導入 背景 DNAストレージ
@@ -88,15 +88,15 @@ DNAシーケンサーは数十から数百bp
 1本鎖の場合はnucleotidesからntという単位を用いる．}
 の短い塩基長のDNAを対象とした
 ショートリードシーケンサー\cite{Simon2009}と，
-数百から数万bpの長い塩基長のDNAを対象としたロングリードシーケンサー\cite{Amarasinghe2020}に大別されるが，
+数百から数万bpの長い塩基長のDNAを対象としたロングリードシーケンサー \cite{Amarasinghe2020}に大別されるが，
 DNAストレージに関する現在までの多くの研究では，
 SBS(Sequence By Synthesis)法\cite{SBS}と呼ばれる
 技術を用いたショートリードシーケンサーが主に用いられてきた．
-SBS法は大量のDNA断片を並列に高精度で解析することができるという利点があるが，
+SBS法は大量のDNA断片を並列に高精度に解析できる利点があるが，
 一度に解析できるDNAの塩基長が数百bp程度と短いことや，解析速度が遅いという欠点がある\cite{SBS}．
 一方，ロングリードシーケンサーの一つであるナノポアシーケンサーは
-一度に数十万bp程度の長い塩基長のDNAを高速に解析することができるため，
-DNAストレージの読み出し用のシーケンサーとして実用的であると考えられる\cite{Amarasinghe2020}．
+一度に数十万bp程度の長い塩基長のDNAを高速に解析できるため，
+DNAストレージの読み出し用のシーケンサーとしてより実用的であると考えられる\cite{Amarasinghe2020}．
 そこで，本研究ではナノポアシーケンサーによる読み出しを前提とした
 DNAストレージに着目する．
 
@@ -104,7 +104,7 @@ DNAストレージに着目する．
 SBS法に比べて塩基配列の決定精度が低いことが知られており，
 特に挿入・消失エラーが多いことが課題となっている\cite{Amarasinghe2020,Dorey2024}． 
 そのため，DNAストレージにおいてナノポアシーケンサーを用いる場合，
-置換・挿入・消失エラーに対応した誤り訂正符号の検討が重要である．
+置換エラーだけでなく挿入・消失エラーに対応した誤り訂正符号の検討が重要である．
 
 先行研究では，連続した同一塩基(ホモポリマー)の禁止や
 GCの含有率に関する制限といったシーケンス制約を
@@ -112,7 +112,7 @@ GCの含有率に関する制限といったシーケンス制約を
 シミュレーションと実際に合成DNAを用いた実験により，
 最大10\%程度の誤りを含む塩基配列からペタバイト規模のデータを
 正確に復元できる可能性を示した\cite{HEDGES}．
-しかし，先行研究はDNAストレージの読み出しにはショートリードシーケンサーを用いることを前提としており，
+しかし，先行研究はDNAストレージの読み出しにショートリードシーケンサーを用いることを前提としており，
 ナノポアシーケンサーの読み出し特性を考慮した誤り訂正符号の最適化は行われていない．
 また，先行研究の提案手法では長い塩基長では復号精度が低下すると述べられており，
 ナノポアシーケンサーのようなロングリードシーケンサーを用いて
@@ -129,7 +129,7 @@ GCの含有率に関する制限といったシーケンス制約を
 ナノポアシーケンサーを用いた読み出し，復号までの一連のプロセスに関する
 シミュレーションを行い，その性能を評価する．
 
-\chapter{DNAストレージの符号化・読み出しプロセス}
+\chapter{DNAストレージの符号化と読み出し}
 % 本章では，ナノポアシーケンサーによる遺伝子解析技術の概要と，
 % DNAストレージにおける誤り訂正符号の一つであるHEDGES符号化・復号の概要について説明する．
 % また，既存手法における課題と本研究の目的を述べる．
@@ -166,15 +166,15 @@ DNAストレージは以下の手順でデータの保存と読み出しを行�
   などのDNAシーケンサーを用いて塩基配列を解析する．
   シーケンス時に発生するエラーには以下の3種類がある．
   \begin{itemize}
-    \item 置換エラー(substitution): 読み出された塩基が本来の塩基とは異なる場合．
-    \item 挿入エラー(insertion): 本来の塩基配列に存在しない塩基が読み出された場合．
-    \item 消失エラー(deletion): 本来の塩基配列に存在する塩基が読み出されなかった場合．
+    \item 置換エラー(substitution): 読み出された塩基が本来の塩基とは異なる誤り
+    \item 挿入エラー(insertion): 本来の塩基配列に存在しない塩基が読み出される誤り
+    \item 消失エラー(deletion): 本来の塩基配列に存在する塩基が読み出されない誤り
   \end{itemize}
   これらのエラーを含む塩基配列から，誤り訂正を行いつつ元のバイナリデータを復元する．
 \end{enumerate}
 
 \section{HEDGES} \label{hedges}
-HEDGES(Hash Encoded, Decoded by Greedy Exhaustive Search)は，シーケンス制約を満たしつつ，
+HEDGES (Hash Encoded, Decoded by Greedy Exhaustive Search)は，シーケンス制約を満たしつつ，
 置換・挿入・消失エラーに対応可能な誤り訂正手法である\cite{HEDGES}．
 \subsection{符号化} \label{hedges_encoding}
 HEDGESではデータをパケット単位で扱う．
@@ -207,7 +207,7 @@ HEDGESはビット列から塩基配列への変換において，符号化率�
 以下に，HEDGESにおける具体的な符号化手順を示す．
 まず，メッセージのビット列$\{b_i\}$が以下のように与えられたとする．
 \begin{align}
-  b_i, \quad i=0,1,2,\ldots M, \quad b_i \in \{0,1\}
+  b_i, \quad i=0,1,2,\ldots, M, \quad b_i \in \{0,1\}
 \end{align}
 % 符号化率$r=0.5$では，
 % 各ビット$b_i$に対して塩基$C_i$を割り当てればよい．
@@ -219,9 +219,9 @@ HEDGESはビット列から塩基配列への変換において，符号化率�
 そのため，ビット列$\{b_i\}$を0から2の長さを持つビット列$v_i$に分割する．
 以下に，符号化率$r=0.750$の場合と$r=0.500$の場合と$r=0.333$の場合の$v_i$の構成例を示す．
 \begin{align}
-  r=0.750&: \quad v_0 = b_0b_1, \quad v_1 = b_2, \quad v_2 = b_3b_4, \quad v_3 = b_5, \quad v_4 = b_6b_7 \ldots \label{eq1} \\
-  r=0.500&: \quad v_0 = b_0, \quad v_1 = b_1, \quad v_2 = b_2, \quad v_3 = b_3 \ldots \\
-  r=0.333&: \quad v_0 = b_0, \quad v_1 = b_1, \quad v_2 = 0, \quad v_3 = b_2, \quad v_4 = b_3, \quad v_5 = 0 \ldots
+  r=0.750&: \quad v_0 = b_0b_1, \quad v_1 = b_2, \quad v_2 = b_3b_4, \quad v_3 = b_5, \quad v_4 = b_6b_7, \ldots \label{eq1} \\
+  r=0.500&: \quad v_0 = b_0, \quad v_1 = b_1, \quad v_2 = b_2, \quad v_3 = b_3, \ldots \\
+  r=0.333&: \quad v_0 = b_0, \quad v_1 = b_1, \quad v_2 = 0, \quad v_3 = b_2, \quad v_4 = b_3, \quad v_5 = 0, \ldots
 \end{align}
 ただし，式\eqref{eq1}において隣接するビットは2ビットの値を表している．
 $r=0.750$では塩基へビット割り当て数は2ビットと1ビットが交互に繰り返される．
@@ -229,7 +229,7 @@ $r=0.500$では，1塩基に1ビットを割り当てる．
 $r=0.333$では，塩基へのビット割り当て数は1ビット，1ビット，0ビットの順に繰り返される．
 各ビット列$v_i$に対して塩基$C_i$を割り当てるとする．
 \begin{align}
-  &C_i, \quad i=0,1,2,\ldots N, \quad C_i \in \{C_i^*\}
+  &C_i, \quad i=0,1,2,\ldots ,N, \quad C_i \in \{C_i^*\}
 \end{align}
 ここで，$\{C_i^*\}$はシーケンス制約を満たすために$C_i$として許される塩基の候補集合であり，
 直前の数塩基の出力に基づいて決定される．例えば，ホモポリマーの最大長に制約を設ける場合，
@@ -245,7 +245,7 @@ $\{C_i^*\}$の各塩基には0から順に整数値が割り当てられてい�
   C_i &=  K_i + v_i  \quad \left(\rm{mod} \#C_i^*\right) \label{encode}
 \end{align}
 ここで，$F$はハッシュ関数であり，$S_i$はDNA鎖のIDに基づくソルト，
-$I_i$はビット位置のインデックス，$V_i$は直前の12ビット分の値である．
+$I_i$はビット位置のインデックス，$V_i$は直前の12ビットの値である．
 すなわち，各ビットに対応する塩基は，DNA鎖のID，ビット位置，直前のビット列に基づく
 ハッシュ関数の値を目的のビットに加算し，出力塩基の候補数で剰余をとることにより，
 擬似ランダムかつ一意に決定される．
@@ -302,30 +302,30 @@ skewは参照塩基を現在の位置からどれだけずらすかを表し，$
 各ステップにおいてスコアが最小となる候補を選択し，これを親として次の候補を
 展開していくことで，ヒープ構造を構築する．
 skewの値によってステップごとのペナルティ$\Delta P$は，
-報酬$P_{ok}$，
-置換ペナルティ$P_{sub}$，
-挿入ペナルティ$P_{ins}$，
-消去ペナルティ$P_{del}$
+報酬$P_{\mathrm{ok}}$，
+置換ペナルティ$P_{\mathrm{sub}}$，
+挿入ペナルティ$P_{\mathrm{ins}}$，
+消去ペナルティ$P_{\mathrm{del}}$
 を用いて
 以下のように計算される．
 \begin{itemize}
   \item $\Delta = 0$の場合: \\ 位置ずれはなく，一致または置換エラーを表す．
   \begin{align}
     \Delta P = \begin{cases}
-      P_{ok} & (\text{一致の場合}) \\
-      P_{sub} & (\text{不一致の場合})
+      P_{\mathrm{ok}} & (\text{一致の場合}) \\
+      P_{\mathrm{sub}} & (\text{不一致の場合})
     \end{cases}
   \end{align}
   \item $\Delta = -1$の場合:\\ 消失エラーを仮定するため，入力塩基の参照位置を一つ戻す．
   この場合は参照する塩基がないので比較は行われない． 
   \begin{align}
-    \Delta P = P_{del}
+    \Delta P = P_{\mathrm{del}}
   \end{align}
   \item $\Delta = 1$の場合: \\ 1塩基の挿入エラーを仮定するため，入力塩基の参照位置を一つ進める．
   \begin{align}
     \Delta P = \begin{cases}
-      P_{ins} + P_{ok} & (\text{一致の場合}) \\
-      P_{ins} + P_{sub} & (\text{不一致の場合})
+      P_{\mathrm{ins}} + P_{\mathrm{ok}} & (\text{一致の場合}) \\
+      P_{\mathrm{ins}} + P_{\mathrm{sub}} & (\text{不一致の場合})
     \end{cases}
   \end{align}
 \end{itemize}
@@ -348,7 +348,7 @@ DNA鎖の残りの部分をビット消失としてマークする．
 DNAの塩基配列を解析するシーケンサーである\cite{Amarasinghe2020,Dorey2024}．
 図\ref{fig:nanopore}にナノポアシーケンサーによるDNA解析の概要を示す．
 ナノポアシーケンサーのフローセルと呼ばれるセンサー基板上
-には複数のナノポアタンパク質が配置されており，
+には複数のナノポアタンパク質が配置されている．
 その細孔の直径は約1nmで，1本のDNAのみが通過できる大きさになっている．
 フローセルは塩化カリウムを含んだ電解質で満たされており，溶液中で
 DNAは負に帯電しているため，電圧を印加することで電気泳動により電場の方向に移動する．
@@ -358,7 +358,7 @@ DNAは負に帯電しているため，電圧を印加することで電気泳�
 このとき，ナノポアを通過するDNAがナノポア内のイオンの流れを阻害するため，イオン電流の大きさが
 変化する．
 イオン電流の変化は，ナノポアを通過中の塩基の並びによって異なるため，
-電流の変化を解析することでDNAの塩基配列を決定することができる．
+電流の変化を解析することでDNAの塩基配列を決定できる．
 \begin{figure}
     \begin{center}
         \includegraphics[width=150mm]{nanopore.png}
@@ -367,8 +367,8 @@ DNAは負に帯電しているため，電圧を印加することで電気泳�
 \end{figure}
 
 電流信号から塩基配列を決定するプロセスはベースコールと呼ばれ，ベースコーラーと呼ばれる
-機械学習モデルによって行われる．本研究で使用するBonitoと呼ばれるベースコーラーの
-アーキテクチャの概要を図\ref{fig:bonito}に示す\cite{bonito}．
+機械学習モデルによって行われる．本研究で使用するベースコーラーの
+アーキテクチャBonitoの概要を図\ref{fig:bonito}に示す\cite{bonito}．
 Bonitoでは，まず入力された電流信号に対してCNNを適用し，
 特徴量を抽出する．次に，LSTMを用いて電流信号の長距離の依存関係を捉え，
 時系列データとしての特徴を抽出する．
@@ -413,10 +413,10 @@ DNAストレージの読み出しにナノポアシーケンサーを採用す�
 \cite{HEDGES}の研究における課題点としては，以下の点が挙げられる．
 \begin{itemize}
   % \item 既存のHEDGES復号アルゴリズムにおいて，置換・挿入・消失エラーに対する
-  % ペナルティ$P_{sub}$，$P_{ins}$，$P_{del}$の値は概念的には各エラーの発生確率の負の対数
+  % ペナルティ$P_{\mathrm{sub}}$，$P_{\mathrm{ins}}$，$P_{\mathrm{del}}$の値は概念的には各エラーの発生確率の負の対数
   % であるとされているが，先行研究のシミュレーション評価においては，各エラーが等しい確率で
-  % 発生する場合を想定して$P_{sub} = P_{ins} = P_{del}=1$と設定した上で，
-  % いくつかの符号化率において最適な報酬$P_{ok}$の値を経験的に決定するにとどめられており，
+  % 発生する場合を想定して$P_{\mathrm{sub}} = P_{\mathrm{ins}} = P_{\mathrm{del}}=1$と設定した上で，
+  % いくつかの符号化率において最適な報酬$P_{\mathrm{ok}}$の値を経験的に決定するにとどめられており，
   \item 既存研究では
   ナノポアシーケンサーを用いて塩基の読み出しを行う場合の統計的な出力特性に基づいた
   報酬とペナルティの最適化は行われていない．
@@ -436,7 +436,7 @@ HEDGES復号アルゴリズムにおける報酬とペナルティに関して�
 抑制するための手法を提案する．
 これらの提案手法に対してシミュレーションを実施し，その性能を評価する．
 
-\chapter{提案手法}\label{proposed_method}
+\chapter{ナノポアシーケンサーによる読み出しを前提とした誤り訂正手法}\label{proposed_method}
 \section{復号の探索効率化} \label{optimization}
 本節では，復号における探索の効率化を図るために，
 ナノポアシーケンサーの統計的な読み出し特性とベースコーラー出力における
@@ -482,7 +482,7 @@ DNA読み出しにおける正しい読み出しと
 \end{itemize}
 を表す．$\bm{T}$の全要素の和は1になる．
 この行列$\bm{T}$の第1行第1列以外の各要素に対して自然対数をとって$-1$を乗じた行列
-を$\bm{P}_{STATS}$とおき，後述の手法により報酬とペナルティの算出に利用する．
+を$\bm{P}_{\mathrm{STATS}}$とおき，後述の手法により報酬とペナルティの算出に利用する．
 
 \subsection{CTC出力の扱い} \label{ctc_output}
 \ref{nanopore}節で説明したように，ベースコーラーは通常，CTC出力に対して
@@ -511,72 +511,72 @@ CTC出力が$L\times 5$行列$\bm{S}$で与えられるとする．ここで，$
 % なお，これにより得られた行列$\bm{S}'$の各行で確率が最大となる塩基を選択することで
 % 得られる塩基配列は，通常のベースコーラーの最終層でのビームサーチにおいてビーム幅を1と
 % した場合のベースコール結果に相当する．
-$\bm{S}'$の各要素に対して自然対数をとって$-1$を乗じた行列を$\bm{P}_{CTC}$とおく．
-$\bm{P}_{CTC}$の各列の要素は，各時点において各塩基または空白が出力される
+$\bm{S}'$の各要素に対して自然対数をとって$-1$を乗じた行列を$\bm{P}_{\mathrm{CTC}}$とおく．
+$\bm{P}_{\mathrm{CTC}}$の各列の要素は，各時点において各塩基または空白が出力される
 確率に基づくスコアを表す．
 \ref{hedges_decoding}節で説明したように，
 既存のHEDGES復号アルゴリズムでは，仮説から式\eqref{encode}を用いて予測される塩基と
 対応する入力塩基を比較して，一致・不一致により報酬やペナルティを決定するが，
 提案手法では，仮説から予測される塩基に対する出力確率に基づくスコアを
-$\bm{P}_{CTC}$から取得し，これを用いて報酬やペナルティを決定する．
+$\bm{P}_{\mathrm{CTC}}$から取得し，これを用いて報酬やペナルティを決定する．
 
 \subsection{報酬とペナルティの最適化} \label{reward_penalty_optimization}
-既存手法では，報酬$P_{ok}$と置換・挿入・消失エラーに対する
-ペナルティ$P_{sub}$，$P_{ins}$，$P_{del}$は一定値を用いるが，本研究では
+既存手法では，報酬$P_{\mathrm{ok}}$と置換・挿入・消失エラーに対する
+ペナルティ$P_{\mathrm{sub}}$，$P_{\mathrm{ins}}$，$P_{\mathrm{del}}$は一定値を用いるが，本研究では
 \ref{stat_model}節および\ref{ctc_output}節で述べたナノポアシーケンサーの読み出し特性と
-ベースコーラーのCTC出力を考慮した新しい報酬$P'_{ok}$と
-ペナルティ$P'_{sub}$，$P'_{ins}$，$P'_{del}$を提案し，以下のように定義する．
+ベースコーラーのCTC出力を考慮した新しい報酬$P'_{\mathrm{ok}}$と
+ペナルティ$P'_{\mathrm{sub}}$，$P'_{\mathrm{ins}}$，$P'_{\mathrm{del}}$を提案し，以下のように定義する．
 \begin{equation}
   \begin{split}
-    P'_{ok} = P_{ok} &+ \alpha_{ok}(\bm{P}_{STATS}(x_{hypo}, x_{max}(i))-\mu_{STATS\_ok}) \label{opt1} \\ 
-   &+ \beta_{ok}(\bm{P}_{CTC}(i, x_{hypo})-\mu_{CTC\_ok}) 
+    P'_{\mathrm{ok}} = P_{\mathrm{ok}} &+ \alpha_{\mathrm{ok}}(\bm{P}_{\mathrm{STATS}}(x_{hypo}, x_{max}(i))-\mu_{\mathrm{STATS}\_\mathrm{ok}}) \label{opt1} \\ 
+     &+ \beta_{\mathrm{ok}}(\bm{P}_{\mathrm{CTC}}(i, x_{hypo})-\mu_{\mathrm{CTC}\_\mathrm{ok}}) 
   \end{split}
 \end{equation}
 \begin{equation}
   \begin{split}
-    P'_{sub} = P_{sub} &+ \alpha_{sub}(\bm{P}_{STATS}(x_{hypo}, x_{max}(i))-\mu_{STATS\_sub}) \label{opt2} \\
-    &+ \beta_{sub}(\bm{P}_{CTC}(i, x_{hypo})-\mu_{CTC\_sub})
+    P'_{\mathrm{sub}} = P_{\mathrm{sub}} &+ \alpha_{\mathrm{sub}}(\bm{P}_{\mathrm{STATS}}(x_{hypo}, x_{max}(i))-\mu_{\mathrm{STATS}\_\mathrm{sub}}) \label{opt2} \\
+    &+ \beta_{\mathrm{sub}}(\bm{P}_{\mathrm{CTC}}(i, x_{hypo})-\mu_{\mathrm{CTC}\_\mathrm{sub}})
   \end{split}
 \end{equation}
 \begin{equation}
   \begin{split}
-    P'_{ins} = P_{ins} &+ \alpha_{ins}(\bm{P}_{STATS}(N, x_{max}(i-1))-\mu_{STATS\_ins}) \label{opt3}\\
-    &+ \beta_{ins}(\bm{P}_{CTC}(i-1, x_{hypo})-\mu_{CTC\_ins})
+    P'_{\mathrm{ins}} = P_{\mathrm{ins}} &+ \alpha_{\mathrm{ins}}(\bm{P}_{\mathrm{STATS}}(N, x_{max}(i-1))-\mu_{\mathrm{STATS}\_\mathrm{ins}}) \label{opt3}\\
+    &+ \beta_{\mathrm{ins}}(\bm{P}_{\mathrm{CTC}}(i-1, x_{hypo})-\mu_{\mathrm{CTC}\_\mathrm{ins}})
   \end{split}
 \end{equation}
 \begin{equation}
   \begin{split}
-    P'_{del} = P_{del} &+ \alpha_{del}(\bm{P}_{STATS}(x_{hypo}, N)-\mu_{STATS\_del}) \label{opt4}
+    P'_{\mathrm{del}} = P_{\mathrm{del}} &+ \alpha_{\mathrm{del}}(\bm{P}_{\mathrm{STATS}}(x_{hypo}, N)-\mu_{\mathrm{STATS}\_\mathrm{del}}) \label{opt4}
   \end{split}
 \end{equation}
 ここで，$x_{hypo}$は仮説のビット列から出力される塩基を表し，$i$は仮説が参照する
-$\bm{P}_{CTC}$の行番号を表す．また，$x_{max}(i)$は$\bm{P}_{CTC}$の$i$行目において
-出力確率が最大となる塩基を表す．$\bm{P}_{STATS}(X,Y)\quad(x,y\in \{N,A,C,G,T\})$は$\bm{P}_{STATS}$における
+$\bm{P}_{\mathrm{CTC}}$の行番号を表す．また，$x_{max}(i)$は$\bm{P}_{\mathrm{CTC}}$の$i$行目において
+出力確率が最大となる塩基を表す．$\bm{P}_{\mathrm{STATS}}(X,Y)\quad(x,y\in \{N,A,C,G,T\})$は$\bm{P}_{\mathrm{STATS}}$における
 ラベル$x$からラベル$y$への遷移に対応するスコアを表す．
-$\bm{P}_{CTC}(i,X)$は，$\bm{P}_{CTC}$の$i$行目におけるラベル$X$のスコアを表す．
-$\mu_{STATS\_ok}$，$\mu_{STATS\_sub}$，
-$\mu_{STATS\_ins}$，$\mu_{STATS\_del}$はそれぞれ，正しい読み出し，置換エラー，
-挿入エラー，消失エラー発生したときの$\bm{P}_{STATS}$のスコアの期待値を表し，
+$\bm{P}_{\mathrm{CTC}}(i,X)$は，$\bm{P}_{\mathrm{CTC}}$の$i$行目におけるラベル$X$のスコアを表す．
+$\mu_{\mathrm{STATS}\_\mathrm{ok}}$，$\mu_{\mathrm{STATS}\_\mathrm{sub}}$，
+$\mu_{\mathrm{STATS}\_\mathrm{ins}}$，$\mu_{\mathrm{STATS}\_\mathrm{del}}$はそれぞれ，正しい読み出し，置換エラー，
+挿入エラー，消失エラーが発生したときの$\bm{P}_{\mathrm{STATS}}$のスコアの期待値を表し，
 % すなわち
 % \begin{align}
-%   \mu_{STATS\_ok} &= \dfrac{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XX} \bm{P}_{STATS}(X,X)}{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XX}} \\
-%   \mu_{STATS\_sub} &= \dfrac{\displaystyle \sum_{X,Y \in \{A,C,G,T\}, X \neq Y} p_{XY} \bm{P}_{STATS}(X,Y)}{\displaystyle \sum_{X,Y \in \{A,C,G,T\}, X \neq Y} p_{XY}} \\
-%   \mu_{STATS\_ins} &= \dfrac{\displaystyle \sum_{Y \in \{A,C,G,T\}} p_{NY} \bm{P}_{STATS}(N,Y)}{\displaystyle \sum_{Y \in \{A,C,G,T\}} p_{NY}} \\
-%   \mu_{STATS\_del} &= \dfrac{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XN} \bm{P}_{STATS}(X,N)}{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XN}}
+%   \mu_{\mathrm{STATS}\_\mathrm{ok}} &= \dfrac{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XX} \bm{P}_{\mathrm{STATS}}(X,X)}{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XX}} \\
+%   \mu_{\mathrm{STATS}\_\mathrm{sub}} &= \dfrac{\displaystyle \sum_{X,Y \in \{A,C,G,T\}, X \neq Y} p_{XY} \bm{P}_{\mathrm{STATS}}(X,Y)}{\displaystyle \sum_{X,Y \in \{A,C,G,T\}, X \neq Y} p_{XY}} \\
+%   \mu_{\mathrm{STATS}\_\mathrm{ins}} &= \dfrac{\displaystyle \sum_{Y \in \{A,C,G,T\}} p_{NY} \bm{P}_{\mathrm{STATS}}(N,Y)}{\displaystyle \sum_{Y \in \{A,C,G,T\}} p_{NY}} \\
+%   \mu_{\mathrm{STATS}\_\mathrm{del}} &= \dfrac{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XN} \bm{P}_{\mathrm{STATS}}(X,N)}{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XN}}
 % \end{align}
 % である．
-$\mu_{CTC\_ok}$，$\mu_{CTC\_sub}$，
-$\mu_{CTC\_ins}$はそれぞれ，$\bm{P}_{CTC}$において
+$\mu_{\mathrm{CTC}\_\mathrm{ok}}$，$\mu_{\mathrm{CTC}\_\mathrm{sub}}$，
+$\mu_{\mathrm{CTC}\_\mathrm{ins}}$はそれぞれ，$\bm{P}_{\mathrm{CTC}}$において
 正しい読み出し，置換エラー，挿入エラーに対応するスコアの統計的な期待値を表す．
-報酬と各ペナルティは，固定の値$P_{ok}$，$P_{sub}$，$P_{ins}$，$P_{del}$に対して，
+報酬と各ペナルティは，固定の値$P_{\mathrm{ok}}$，$P_{\mathrm{sub}}$，$P_{\mathrm{ins}}$，$P_{\mathrm{del}}$に対して，
 期待値が0になるように正規化された補正項を加算することで計算される．
-各補正項には，調整用のパラメータ$\alpha_{ok}$，$\alpha_{sub}$，$\alpha_{ins}$，$\alpha_{del}$，
-$\beta_{ok}$，$\beta_{sub}$，$\beta_{ins}$が乗じられており，
+各補正項には，調整用のパラメータ$\alpha_{\mathrm{ok}}$，$\alpha_{\mathrm{sub}}$，$\alpha_{\mathrm{ins}}$，$\alpha_{\mathrm{del}}$，
+$\beta_{\mathrm{ok}}$，$\beta_{\mathrm{sub}}$，$\beta_{\mathrm{ins}}$が乗じられており，
 シミュレーションにより固定のペナルティと各補正項の重み付けを最適化する．
 各定数の設定方法やパラメータの最適化手法については付録で詳しく述べる．
 % まず，仮説のビット列から出力される塩基を$x_{hypo}$とする．
-% また，仮説が参照する$\bm{P}_{CTC}$の行番号を$i$とする．
-% このとき，$\bm{P}_{CTC}$の$i$行目において出力確率が最大となる塩基を
+% また，仮説が参照する$\bm{P}_{\mathrm{CTC}}$の行番号を$i$とする．
+% このとき，$\bm{P}_{\mathrm{CTC}}$の$i$行目において出力確率が最大となる塩基を
 % $x_{max}(i)$とする．
 
 \section{ロングリードに向けた符号化アルゴリズムの改良} \label{long_read_encoding}
@@ -595,11 +595,11 @@ DNA鎖のID，ビット位置，直前のビット列に基づく
 そのため，例えばDNA鎖のある位置でバースト誤りが発生した場合，
 後続の塩基配列の復号に対しても連鎖的に影響を及ぼし，正しい復号経路の
 探索が困難になる．
-そこで，提案手法では図\ref{fig:segment}のように長い塩基配列を400ntのセグメントに分割し，
+そこで，提案手法では図\ref{fig:segment}のように長い塩基配列を400\,ntのセグメントに分割し，
 各セグメントの先頭で，ハッシュ関数の入力として用いるビット位置$I_i$と
 直前のビット列情報$B_i$を0に初期化して符号化する．
 セグメントの区切り位置を特定するために，隣接するセグメント間には
-特定のパターンを持つ10塩基程度のセパレータを挿入する．
+特定のパターンを持つ10塩基程度の既知のセパレータを挿入する．
 セパレータのパターンとしては，ホモポリマーがなく，GC含量が50\%程度となるような
 塩基配列を選択する．本手法では”GTACTGCATG”という塩基配列をセパレータとして用いる．
 
@@ -609,7 +609,7 @@ DNA鎖のID，ビット位置，直前のビット列に基づく
   \item $n-30<k<n+30$を満たす整数$k$対して$S_{match}(k)$を以下の式で計算し，
   $S_{match}(k)$を最小とする$k$をセパレータの位置として選択し，これを$k'$とする．
   \begin{align}
-    S_{match}(k) = \sum_{j=0}^{l_{sep}-1} \bm{P}_{CTC}[k+j, S[j]] \label{eq:separator_detection}
+    S_{match}(k) = \sum_{j=0}^{l_{sep}-1} \bm{P}_{\mathrm{CTC}}[k+j, S[j]] \label{eq:separator_detection}
   \end{align}
   ただし$S[j]$はセパレータ配列の$j$番目の塩基を表し，$l_{sep}$はセパレータ配列の長さを表す．
   \item $n=k' + l_{sep}+l_{seg}$とする．
@@ -629,7 +629,7 @@ DNA鎖のID，ビット位置，直前のビット列に基づく
     \end{center}
 \end{figure}
 
-\chapter{シミュレーション} \label{simulation}
+\chapter{シミュレーション評価} \label{simulation}
 本章では，シミュレーションを用いて提案手法の性能を評価する．
 \ref{sim1}節では\ref{optimization}節で提案した報酬とペナルティの最適化手法を用いる場合の
 復号時の探索数と復号精度を計測し，既存手法を用いる場合と比較してその有効性を評価する．
@@ -648,7 +648,7 @@ DNA鎖のID，ビット位置，直前のビット列に基づく
     \end{center}
 \end{figure}
 予備実験として，シミュレーションによりナノポアシーケンサーの読み出し特性を評価し，
-行列$\bm{P}_{STATS}$を得た．
+行列$\bm{P}_{\mathrm{STATS}}$を得た．
 次に，ランダムバイナリを用いた符号化・復号シミュレーションにおいて，
 復号時のヒープ探索数を目的関数とする勾配降下法により，式\eqref{opt1}から\eqref{opt4}
 における各補正項のパラメータを最適化した．
@@ -661,15 +661,15 @@ CTC出力に基づく補正項のみを用いる場合，両方の補正項を�
 予備実験で得られた最適なパラメータを用いて，提案手法の復号性能を評価した．
 まず，テストに用いるバイナリデータをHEDGESで符号化し，
 得られたDNA鎖に対し，
-ナノポアシーケンサーによる電流波形をSquigulator\cite{squigulator}と呼ばれるシミュレータを用いて
-シミュレーションした．
+ナノポアシーケンサーによる電流波形をSquigulator\cite{squigulator}と呼ばれる
+シミュレータを用いて得た．
 次に，シミュレーションされた電流波形に対して，Bonitoでベースコールを行った．
 このとき，最終的な塩基配列だけでなく，CTCデコード前のCTCスコア行列も出力するようにした．
 このベースコール結果を用いて，既存手法および提案手法による復号を行い，ヒープの探索数，
 復号失敗による消失ビット数，RS復号後の最終的なビット誤り率を計測した．
 既存手法を用いた復号では，ベースコーラーが出力する塩基配列を入力とする．
 提案手法を用いた復号では，CTCスコア行列を入力とし，ナノポアシーケンサーの読み出し特性に基づく
-補正項のみ用いる場合・CTC出力に基づく補正項のみ用いる場合・両方の補正項を用いる場合の3通りについて
+補正項のみ用いる場合，CTC出力に基づく補正項のみ用いる場合，両方の補正項を用いる場合の3通りについて
 評価を行った．このバイナリデータの符号化から復号までの一連のシミュレーションを，
 複数の符号化率について実施した．
 
@@ -679,7 +679,7 @@ CTC出力に基づく補正項のみを用いる場合，両方の補正項を�
 ものを使用した\cite{kokoro}．このデータのサイズは481158バイトである．
 このバイナリデータをHEDGESで符号化は，
 符号化率
-$0.75,0.60,0.50,0.33$で行い，塩基長は400ntとした．
+$0.75,0.60,0.50,0.33$で行い，塩基長は400\,ntとした．
 Squigulatorを用いたナノポアシーケンサーの電流値シミュレーションでは，
 MinION R9.4.1フローセルを想定したパラメータ設定を用いた\cite{squigulator}．
 Bonitoのモデルには，既存の学習済みモデル%であるdna\_r9.4.1@v2
@@ -751,11 +751,11 @@ RS復号後の最終的なビット誤り率を
     \hline
   \end{tabular}
 \end{table}
-実験結果では，提案手法を用いることで，各符号化率において
+提案手法を用いることで，各符号化率において
 既存手法と比べてヒープ探索数を削減し，復号失敗率を低減することができた．
-ナノポアシーケンサーの読み出し特性に基づく補正項のみ適用した場合，
+ナノポアシーケンサーの読み出し特性に基づく補正項のみを適用した場合，
 ヒープ探索数が43\%から61\%削減され，ビット消失率は60\%から77\%低減した．
-CTC出力に基づく補正項のみ適用した場合，
+CTC出力に基づく補正項のみを適用した場合，
 ヒープ探索数が56\%から65\%削減され，ビット消失率は68\%から83\%低減した．
 また，これら両方の補正項を適用した場合には，
 ヒープ探索数は64\%から68\%削減され，ビット消失率は76\%から83\%低減し，
@@ -778,7 +778,7 @@ CTC出力に基づく補正項のみ適用した場合，
 と同様の手法で電流波形のシミュレーションとベースコールを行った．
 このベースコール結果に対して\ref{optimization}節の提案手法
 により復号を行い，各パラメータは\ref{sim1}節の実験で得られたものを使用した．
-これをDNA鎖1本の塩基長を500ntから15000ntの範囲で変化させながら行い，
+これをDNA鎖1本の塩基長を500\,ntから15000\,ntの範囲で変化させながら行い，
 HEDGES復号におけるビット誤り率を計測した．
 また，既存手法による符号化は，塩基長を変えてもヒープ上限は一定値とする場合と，
 ヒープ上限を塩基長に比例して増加させる場合の2通りについて評価を行った．
@@ -786,12 +786,12 @@ HEDGES復号におけるビット誤り率を計測した．
 次に，同じバイナリデータを用いて，提案手法によるセグメント化を適用した符号化を
 行い，同様に電流波形のシミュレーションとベースコールを行った．
 復号においては，まずセパレータの位置を検出する必要があるため，
-CTC出力に対して\ref{ctc_output}節で説明した方法で得られた$\bm{P}_{CTC}$
+CTC出力に対して\ref{ctc_output}節で説明した方法で得られた$\bm{P}_{\mathrm{CTC}}$
 に対して\ref{long_read_encoding}節の方法でセパレータの検出を行った後，
 セグメントごとに\ref{optimization}節の提案手法を用いて
 復号を行った．
 これをセグメント長は一定として，セグメント数を変化させることでDNA鎖全体の
-塩基長を500nt程度から15000nt程度の範囲で変化させながら行い，
+塩基長を500\,nt程度から15000\,nt程度の範囲で変化させながら行い，
 HEDGES復号におけるビット誤り率を計測した．
 
 
@@ -800,9 +800,9 @@ HEDGES復号におけるビット誤り率を計測した．
 また，Squigulatorによる電流値シミュレーションのパラメータ設定，
 ベースコーラーのモデルについても\ref{sim1}節の実験と同様に行った．
 既存手法及び提案手法による符号化における符号化率は0.60とした．
-提案手法におけるセグメント化では，セグメント長は400ntとした．
+提案手法におけるセグメント化では，セグメント長は400\,ntとした．
 復号におけるヒープ探索では，既存手法では塩基長に関わらずヒープサイズの上限を
-1000000とした場合と，塩基長が400ntのときのヒープサイズ上限を1000000とし，
+1000000とした場合と，塩基長が400\,ntのときのヒープサイズ上限を1000000とし，
 これを基準としてヒープサイズ上限を塩基長に比例して増加させる場合の2通りについて評価を行った．
 提案手法におけるセグメントごとの復号では，ヒープサイズの上限を各セグメントごとで
 1000000とした．
@@ -909,52 +909,52 @@ DNA鎖の塩基長が長い場合に復号精度が低下するという課題�
 \appendix
 \chapter{復号の探索効率化における予備実験}
 \section{実験方法}
-まず，ナノポアシーケンサーの出力特性を表す行列$\bm{P}_{STATS}$を得るため，
+まず，ナノポアシーケンサーの出力特性を表す行列$\bm{P}_{\mathrm{STATS}}$を得るため，
 ランダムなバイナリデータをHEDGESで符号化した複数のDNA鎖に対し，
 ナノポアシーケンサーによる電流波形をSquigulatorを用いて
 シミュレーションした．
 次に，シミュレーションされた電流波形に対してBonitoを用いて
-CTC出力を取得し，\ref{ctc_output}節で述べた方法で$\bm{P}_{CTC}$を得た．
+CTC出力を取得し，\ref{ctc_output}節で述べた方法で$\bm{P}_{\mathrm{CTC}}$を得た．
 ここで，HEDGES符号化結果における$j$番目のDNA鎖の$i$番目の塩基を$C_i^{(j)}$と表し，
 この塩基配列を$\{C_i^{(j)}\}$とする．また，
 $\{C_i^{(j)}\}$のベースコールにおいて得られた
-$\bm{P}_{CTC}$を$\bm{P}_{CTC}^{(j)}$と表すこととし，
-$\bm{P}_{CTC}^{(j)}$の各行において，出力確率が最大となる塩基を選択することで
+$\bm{P}_{\mathrm{CTC}}$を$\bm{P}_{\mathrm{CTC}}^{(j)}$と表すこととし，
+$\bm{P}_{\mathrm{CTC}}^{(j)}$の各行において，出力確率が最大となる塩基を選択することで
 得られる塩基配列を$\{C'^{(j)}_i\}$と表す．この$\{C'^{(j)}_i\}$と$\{C_i^{(j)}\}$に対して
 グローバルアラインメントを行い，各塩基ごとに
 正しい読み出し，置換・挿入・消失エラーの発生数を集計した\cite{GOTOH1982705}．
 これを全ての$j$について行い，集計することで
-各事象の発生確率を計算し，行列$\bm{P}_{STATS}$を得た．
+各事象の発生確率を計算し，行列$\bm{P}_{\mathrm{STATS}}$を得た．
 
-$\mu_{STATS\_ok}$，$\mu_{STATS\_sub}$，
-$\mu_{STATS\_ins}$，$\mu_{STATS\_del}$はそれぞれ，正しい読み出し，置換エラー，
-挿入エラー，消失エラー発生したときの$\bm{P}_{STATS}$のスコアの期待値であるから，
+$\mu_{\mathrm{STATS}\_\mathrm{ok}}$，$\mu_{\mathrm{STATS}\_\mathrm{sub}}$，
+$\mu_{\mathrm{STATS}\_\mathrm{ins}}$，$\mu_{\mathrm{STATS}\_\mathrm{del}}$はそれぞれ，正しい読み出し，置換エラー，
+挿入エラー，消失エラーが発生したときの$\bm{P}_{\mathrm{STATS}}$のスコアの期待値であるから，
 \begin{align}
-  \mu_{STATS\_ok} &= \dfrac{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XX} \bm{P}_{STATS}(X,X)}{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XX}} \\
-  \mu_{STATS\_sub} &= \dfrac{\displaystyle \sum_{X,Y \in \{A,C,G,T\}, X \neq Y} p_{XY} \bm{P}_{STATS}(X,Y)}{\displaystyle \sum_{X,Y \in \{A,C,G,T\}, X \neq Y} p_{XY}} \\
-  \mu_{STATS\_ins} &= \dfrac{\displaystyle \sum_{Y \in \{A,C,G,T\}} p_{NY} \bm{P}_{STATS}(N,Y)}{\displaystyle \sum_{Y \in \{A,C,G,T\}} p_{NY}} \\
-  \mu_{STATS\_del} &= \dfrac{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XN} \bm{P}_{STATS}(X,N)}{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XN}}
+  \mu_{\mathrm{STATS}\_\mathrm{ok}} &= \dfrac{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XX} \bm{P}_{\mathrm{STATS}}(X,X)}{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XX}} \\
+  \mu_{\mathrm{STATS}\_\mathrm{sub}} &= \dfrac{\displaystyle \sum_{X,Y \in \{A,C,G,T\}, X \neq Y} p_{XY} \bm{P}_{\mathrm{STATS}}(X,Y)}{\displaystyle \sum_{X,Y \in \{A,C,G,T\}, X \neq Y} p_{XY}} \\
+  \mu_{\mathrm{STATS}\_\mathrm{ins}} &= \dfrac{\displaystyle \sum_{Y \in \{A,C,G,T\}} p_{NY} \bm{P}_{\mathrm{STATS}}(N,Y)}{\displaystyle \sum_{Y \in \{A,C,G,T\}} p_{NY}} \\
+  \mu_{\mathrm{STATS}\_\mathrm{del}} &= \dfrac{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XN} \bm{P}_{\mathrm{STATS}}(X,N)}{\displaystyle \sum_{X \in \{A,C,G,T\}} p_{XN}}
 \end{align}
 により計算される．
-$\mu_{CTC\_ok}$，$\mu_{CTC\_sub}$，
-$\mu_{CTC\_ins}$はそれぞれ，$\bm{P}_{CTC}$において
+$\mu_{\mathrm{CTC}\_\mathrm{ok}}$，$\mu_{\mathrm{CTC}\_\mathrm{sub}}$，
+$\mu_{\mathrm{CTC}\_\mathrm{ins}}$はそれぞれ，$\bm{P}_{\mathrm{CTC}}$において
 正しい読み出し，置換エラー，挿入エラーに対応するスコアの期待値であるから，
 \begin{align}
-  \mu_{CTC\_ok} &= \dfrac{1}{M}\sum_j \sum_i \bm{P}_{CTC}^{(j)}(i, C'^{(j)}_i) \\
-  \mu_{CTC\_sub} &= \dfrac{1}{3M}\sum_j \sum_i \sum_{X \in \{A,C,G,T\}, X \neq C'^{(j)}_i} \bm{P}_{CTC}^{(j)}(i, X) \\
-  \mu_{CTC\_ins} &= \dfrac{1}{M}\sum_j \sum_i \bm{P}_{CTC}^{(j)}(i, N)
+  \mu_{\mathrm{CTC}\_\mathrm{ok}} &= \dfrac{1}{M}\sum_j \sum_i \bm{P}_{\mathrm{CTC}}^{(j)}(i, C'^{(j)}_i) \\
+  \mu_{\mathrm{CTC}\_\mathrm{sub}} &= \dfrac{1}{3M}\sum_j \sum_i \sum_{X \in \{A,C,G,T\}, X \neq C'^{(j)}_i} \bm{P}_{\mathrm{CTC}}^{(j)}(i, X) \\
+  \mu_{\mathrm{CTC}\_\mathrm{ins}} &= \dfrac{1}{M}\sum_j \sum_i \bm{P}_{\mathrm{CTC}}^{(j)}(i, N)
 \end{align}
 により計算される．
 ただし，$M$はベースコールされた全てのDNA鎖における塩基数の総和を表す．
 
 次に，式\eqref{opt1}から\eqref{opt4}に示した
-固定の報酬とペナルティ$P_{ok}, P_{sub}, P_{ins}, P_{del}$
+固定の報酬とペナルティ$P_{\mathrm{ok}}, P_{\mathrm{sub}}, P_{\mathrm{ins}}, P_{\mathrm{del}}$
 及び各補正項の重み付けパラメータ
-$\alpha_{ok}, \alpha_{sub}, \alpha_{ins}, \alpha_{del},
-\beta_{ok}, \beta_{sub}, \beta_{ins}$の最適な値を決定する．
-ここで，$P_{ok}$には\cite{HEDGES}の研究で用いられた値を各符号化率ごとに使用し，
-$P_{ok}$以外のパラメータを最適化した．
-各パラメータの最適化は，復号におけるヒープの探索数を目的関数とした，
+$\alpha_{\mathrm{ok}}, \alpha_{\mathrm{sub}}, \alpha_{\mathrm{ins}}, \alpha_{\mathrm{del}},
+\beta_{\mathrm{ok}}, \beta_{\mathrm{sub}}, \beta_{\mathrm{ins}}$の最適な値を決定する．
+ここで，$P_{\mathrm{ok}}$には文献\cite{HEDGES}用いられた値を各符号化率ごとに使用し，
+$P_{\mathrm{ok}}$以外のパラメータを最適化した．
+各パラメータの最適化は，復号におけるヒープの探索数を目的関数として
 数値微分を用いた勾配降下法により行った．
 具体的には，まずランダムに生成したバイナリデータをHEDGESで符号化し，
 ナノポアシーケンサーでの読み出しをシミュレーションした上で
@@ -977,25 +977,25 @@ $P_{ok}$以外のパラメータを最適化した．
 パラメータの最適化については，ナノポアシーケンサーの読み出し特性に基づく補正項と
 CTC出力に基づく補正項の両方を用いる場合と，それぞれ一方のみを用いる場合について
 効果を検証するため，
-$P_{sub}$,$P_{ins}$,$P_{del}$,$\alpha_{ok}$, $\alpha_{sub}$, $\alpha_{ins}$, $\alpha_{del}$,
-$\beta_{ok}$, $\beta_{sub}$, $\beta_{ins}$の10個のパラメータに対して行うのに加えて，
-$\alpha_{ok}=\alpha_{sub}=\alpha_{ins}=\alpha_{del}=0$として他の6個のパラメータに対してのみ
+$P_{\mathrm{sub}}$,$P_{\mathrm{ins}}$,$P_{\mathrm{del}}$,$\alpha_{\mathrm{ok}}$, $\alpha_{\mathrm{sub}}$, $\alpha_{\mathrm{ins}}$, $\alpha_{\mathrm{del}}$,
+$\beta_{\mathrm{ok}}$, $\beta_{\mathrm{sub}}$, $\beta_{\mathrm{ins}}$の10個のパラメータに対して行うのに加えて，
+$\alpha_{\mathrm{ok}}=\alpha_{\mathrm{sub}}=\alpha_{\mathrm{ins}}=\alpha_{\mathrm{del}}=0$として他の6個のパラメータに対してのみ
 行う場合と
-$\beta_{ok}=\beta_{sub}=\beta_{ins}=0$として他の7個のパラメータに対してのみ
+$\beta_{\mathrm{ok}}=\beta_{\mathrm{sub}}=\beta_{\mathrm{ins}}=0$として他の7個のパラメータに対してのみ
 行う場合についても実施した．
 なお，これらの最適化は符号化率$0.75,0.60,0.50,0.33$について
 それぞれ独立に行った．
 
 \section{実験条件}
-行列$\bm{P}_{STATS}$を得るためのシミュレーションでは，ランダムに生成した400KBのバイナリデータを
-HEDGESで符号化率0.50で符号化した．各DNA鎖の塩基長は400ntとし，
+行列$\bm{P}_{\mathrm{STATS}}$を得るためのシミュレーションでは，ランダムに生成した400\,KBのバイナリデータを
+HEDGESで符号化率を0.50として符号化した．各DNA鎖の塩基長は400\,ntとし，
 合計12240本のDNA鎖を生成した．
 Squigulatorによる電流値シミュレーションのパラメータ設定，
 ベースコーラーのモデルについては\ref{sim1}節の実験と同様である．
 
 ベースコーラーのファインチューニングには，
-ランダムに生成した200KBのバイナリデータを
-HEDGESで符号化率0.50，塩基長400ntで符号化して得られた6120本のDNA鎖と，
+ランダムに生成した200\,KBのバイナリデータを
+HEDGESで符号化率0.50，塩基長400\,ntで符号化して得られた6120本のDNA鎖と，
 これらのDNA鎖に対してSquigulatorでシミュレーションした電流波形を学習データとして用いた．
 既存の学習済みモデルである
 dna\_r9.4.1@v2の重みを初期値として，バッチサイズを64として1エポックあたり75ステップ
@@ -1004,27 +1004,29 @@ dna\_r9.4.1@v2の重みを初期値として，バッチサイズを64として1
 $\{C^{(n)}_i\}$と$\{C'^{(n)}_i\}$に対するアラインメントにはBiopythonの
 Gotohアルゴリズムを用いたグローバルアラインメントを使用した\cite{biopython,GOTOH1982705}．
 
-パラメータの最適化では，ランダムに生成した400KBのバイナリデータを符号化率
-$0.75,0.60,0.50,0.33$で塩基長を400ntとしてHEDGES符号化したものに対して
-電流波形シミュレーション・ベースコールを行って得られたCTC出力を用いた．
-$P_{ok}$は各符号化率ごとに表\ref{tab:fixed_reward}に示す固定の値を使用した．
-各パラメータの初期値は$P_{sub}=P_{ins}=P_{del}=1.0$，
-$\alpha_{ok}=\alpha_{sub}=\alpha_{ins}=\alpha_{del}=0.0$，
-$\beta_{ok}=\beta_{sub}=\beta_{ins}=0.0$とした．
+パラメータの最適化では，ランダムに生成した400\,KBのバイナリデータを符号化率
+$0.75,0.60,0.50,0.33$で塩基長を400\,ntとしてHEDGES符号化したものに対して
+電流波形シミュレーションとベースコールを行って得られたCTC出力を用いた．
+$P_{\mathrm{ok}}$は各符号化率ごとに表\ref{tab:fixed_reward}に示す固定値を使用した．
+各パラメータの初期値は$P_{\mathrm{sub}}=P_{\mathrm{ins}}=P_{\mathrm{del}}=1.0$，
+$\alpha_{\mathrm{ok}}=\alpha_{\mathrm{sub}}=\alpha_{\mathrm{ins}}=\alpha_{\mathrm{del}}=0.0$，
+$\beta_{\mathrm{ok}}=\beta_{\mathrm{sub}}=\beta_{\mathrm{ins}}=0.0$とした．
 学習率は符号化率ごとに表\ref{tab:learning_rate}に示す値を使用し，パラメータの更新を300回繰り返した．
 \begin{table}
   \centering
   \begin{minipage}{0.48\linewidth}
     \centering
-    \caption{符号化率ごとの報酬値$P_{ok}$}
+    \caption{符号化率ごとの報酬値$P_{\mathrm{ok}}$}
     \label{tab:fixed_reward}
     \begin{tabular}{c|c}
-      符号化率 & $P_{ok}$ \\
+      \hline
+      符号化率 & $P_{\mathrm{ok}}$ \\
       \hline
       0.75 & -0.035 \\
       0.60 & -0.082 \\
       0.50 & -0.127 \\
       0.33 & -0.229 \\
+      \hline
     \end{tabular}
   \end{minipage}
   \hfill
@@ -1033,28 +1035,31 @@ $\beta_{ok}=\beta_{sub}=\beta_{ins}=0.0$とした．
     \caption{符号化率ごとの学習率$\eta$}
     \label{tab:learning_rate}
     \begin{tabular}{c|c}
+      \hline
       符号化率 & $\eta$ \\
       \hline
       0.75 & $1.3 \times 10^{-7}$ \\
       0.60 &  $4.1 \times 10^{-7}$\\
       0.50 &  $1.0 \times 10^{-6}$ \\
       0.33 &  $3.8 \times 10^{-6}$ \\
+      \hline
     \end{tabular}
   \end{minipage}
 \end{table}
-なお，$\bm{P}_{STATS}$を得るためのシミュレーション，
+なお，$\bm{P}_{\mathrm{STATS}}$を得るためのシミュレーション，
 ベースコーラーのファインチューニング，
 パラメータの最適化に用いたランダムなバイナリデータは全て独立に生成したものである．
 
 \section{結果}
-ナノポアシーケンサーの読み出し特性の評価において，
+ナノポアシーケンサーの読み出し特性の評価により得られた
 ラベル$\{N,A,C,G,T\}$間の遷移確率は表\ref{tab:transition_matrix}に
-示すように得られた．
+示す．
 \begin{table}
   \centering
   \caption{ラベル間の遷移確率}
   \label{tab:transition_matrix}
   \begin{tabular}{c|ccccc}
+    \hline
     入力$\backslash$出力 & N & A & C & G & T \\
     \hline
     N & $0.000$ & $3.11 \times 10^{-4}$ & $3.11 \times 10^{-4}$ & $3.18 \times 10^{-4}$ & $3.86 \times 10^{-4}$  \\
@@ -1062,6 +1067,7 @@ $\beta_{ok}=\beta_{sub}=\beta_{ins}=0.0$とした．
     C & $5.95 \times 10^{-4}$ & $3.10 \times 10^{-4}$ & $0.244$ & $3.56 \times 10^{-4}$ & $1.27 \times 10^{-4}$ \\
     G & $8.27 \times 10^{-4}$ & $9.00 \times 10^{-4}$ & $6.60 \times 10^{-4}$ & $0.269$ & $5.13 \times 10^{-5}$ \\
     T & $6.73 \times 10^{-4}$ & $4.36 \times 10^{-5}$ & $1.55 \times 10^{-4}$ & $5.85 \times 10^{-5}$ & $0.247$ \\
+    \hline
   \end{tabular}
 \end{table}
 この結果では，正しい読み取りは全体のうち99.1\%を占めており，
@@ -1076,13 +1082,13 @@ NからA,C,G,Tへの遷移で表わされる挿入エラーは，
 各塩基に対して同程度の確率で発生していた．
 A,C,G,TからNへの遷移で表わされる消失エラーは，
 A,GにおいてC,Tよりも比較的高い確率で発生していた．
-この結果から得られた行列$\bm{P}_{STATS}$は
+この結果から得られた行列$\bm{P}_{\mathrm{STATS}}$は
 式\eqref{eq:appendix_P_STATS}のようになった．
 各補正項の期待値は表\ref{tab:appendix_mu_values}に示す．
 各符号化率ごとに最適化されたペナルティと補正項の重み付けパラメータは
 表\ref{tab:appendix_params_p}および表\ref{tab:appendix_params_alpha_beta}に示す．
 \begin{align}
-  \bm{P}_{STATS} =
+  \bm{P}_{\mathrm{STATS}} =
   \begin{bmatrix}
     -1.20 & -0.650 & -0.650 & -0.643 & -0.613 \\
     -0.580 & 0.130 & -0.670 & -0.590 & -1.25 \\
@@ -1097,15 +1103,17 @@ A,GにおいてC,Tよりも比較的高い確率で発生していた．
   \caption{得られた各期待値}
   \label{tab:appendix_mu_values}
   \begin{tabular}{c|c}
+    \hline
     パラメータ & 値 \\
     \hline
-    $\mu_{STATS\_ok}$ & 1.38 \\
-    $\mu_{STATS\_sub}$ & 7.52 \\
-    $\mu_{STATS\_ins}$ & 8.01 \\
-    $\mu_{STATS\_del}$ & 7.17 \\
-    $\mu_{CTC\_ok}$ & 0.111 \\
-    $\mu_{CTC\_sub}$ & 6.85 \\
-    $\mu_{CTC\_ins}$ & 2.78 \\
+    $\mu_{\mathrm{STATS}\_\mathrm{ok}}$ & 1.38 \\
+    $\mu_{\mathrm{STATS}\_\mathrm{sub}}$ & 7.52 \\
+    $\mu_{\mathrm{STATS}\_\mathrm{ins}}$ & 8.01 \\
+    $\mu_{\mathrm{STATS}\_\mathrm{del}}$ & 7.17 \\
+    $\mu_{\mathrm{CTC}\_\mathrm{ok}}$ & 0.111 \\
+    $\mu_{\mathrm{CTC}\_\mathrm{sub}}$ & 6.85 \\
+    $\mu_{\mathrm{CTC}\_\mathrm{ins}}$ & 2.78 \\
+    \hline
   \end{tabular}
 \end{table}
 
@@ -1115,7 +1123,8 @@ A,GにおいてC,Tよりも比較的高い確率で発生していた．
   \label{tab:appendix_params_p}
   \footnotesize
   \begin{tabular}{c|c|ccc}
-    符号化率 & 手法 & $P_{\text{sub}}$ & $P_{\text{ins}}$ & $P_{\text{del}}$ \\
+    \hline
+    符号化率 & 手法 & $P_{\mathrm{sub}}$ & $P_{\mathrm{ins}}$ & $P_{\mathrm{del}}$ \\
     \hline
     \multirow{3}{*}{0.75} & STATSのみ$^{*}$ & 0.630 & 0.650 & 0.687 \\
     & CTCのみ$^{**}$ & 0.837 & 0.912 & 0.765 \\
@@ -1132,6 +1141,7 @@ A,GにおいてC,Tよりも比較的高い確率で発生していた．
     \multirow{3}{*}{0.33} & STATSのみ$^{*}$ & 1.07 & 1.25 & 1.39 \\
     & CTCのみ$^{**}$ & 1.06 & 1.22 & 1.21 \\
     & STATS+CTC$^{***}$ & 1.29 & 1.35 & 1.34 \\
+    \hline
   \end{tabular}
   
   \small
@@ -1151,7 +1161,8 @@ A,GにおいてC,Tよりも比較的高い確率で発生していた．
   \label{tab:appendix_params_alpha_beta}
   \footnotesize
   \begin{tabular}{c|c|cccc|ccc}
-    符号化率 & 手法 & $\alpha_{\text{ok}}$ & $\alpha_{\text{sub}}$ & $\alpha_{\text{del}}$ & $\alpha_{\text{ins}}$ & $\beta_{\text{ok}}$ & $\beta_{\text{sub}}$ & $\beta_{\text{ins}}$ \\
+    \hline
+    符号化率 & 手法 & $\alpha_{\mathrm{ok}}$ & $\alpha_{\mathrm{sub}}$ & $\alpha_{\mathrm{del}}$ & $\alpha_{\mathrm{ins}}$ & $\beta_{\mathrm{ok}}$ & $\beta_{\mathrm{sub}}$ & $\beta_{\mathrm{ins}}$ \\
     \hline
     \multirow{3}{*}{0.75} & STATSのみ& 0.0605 & 0.116 & 0.0929 & 0.0952 & 0.00 & 0.00 & 0.00 \\
     & CTCのみ& 0.00 & 0.00 & 0.00 & 0.00 & -0.192 & 0.211 & 0.347 \\
@@ -1167,7 +1178,8 @@ A,GにおいてC,Tよりも比較的高い確率で発生していた．
     \hline
     \multirow{3}{*}{0.33} & STATSのみ & -0.00773 & 0.282 & 0.167 & 0.246 & 0.00 & 0.00 & 0.00 \\
     & CTCのみ & 0.00 & 0.00 & 0.00 & 0.00 & 0.0272 & 0.145 & 0.422 \\
-    & STATS+CTC & 0.0260 & 0.328 & 0.177 & 0.230 & 0.0417 & 0.134 & 0.460 \
+    & STATS+CTC & 0.0260 & 0.328 & 0.177 & 0.230 & 0.0417 & 0.134 & 0.460 \\
+    \hline
   \end{tabular}
 \end{table}
 

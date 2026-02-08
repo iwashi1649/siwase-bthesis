@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.0-u1.29-230214-2.6 (utf8.euc) (TeX Live 2023/Debian) (preloaded format=platex 2024.10.21)  6 FEB 2026 11:28
+This is e-upTeX, Version 3.141592653-p4.1.0-u1.29-230214-2.6 (utf8.euc) (TeX Live 2023/Debian) (preloaded format=platex 2024.10.21)  9 FEB 2026 00:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -325,6 +325,12 @@ Overfull \hbox (0.83417pt too wide) in paragraph at lines 502--506
 第{4}章.
 \@kuee7chapter=\count296
 \@kuee7figure=\count297
+
+Overfull \hbox (2.70428pt too wide) in paragraph at lines 661--675
+\JY1/mc/m/n/12 ミ ュ レ ータを用いて得た ． 次に ， シミ ュ レ ーシ ョ ンされた
+電流波形に対して ， \OT1/cmr/m/n/12 Bonito
+ []
+
 [15
 
 ]
@@ -334,7 +340,13 @@ Overfull \hbox (0.83417pt too wide) in paragraph at lines 502--506
 \@kuee9table=\count301
 \@kuee10chapter=\count302
 \@kuee10table=\count303
- [16] [17]
+ [16]
+Overfull \hbox (2.0593pt too wide) in paragraph at lines 799--809
+\JY1/mc/m/n/12 るセグメントごとの復号では ， ヒ ープサイズの上限を各セグメント
+ごとで \OT1/cmr/m/n/12 1000000
+ []
+
+[17]
 \@kuee11chapter=\count304
 \@kuee11figure=\count305
 \@kuee12chapter=\count306
@@ -418,7 +430,13 @@ Overfull \hbox (10.62177pt too wide) in paragraph at lines 996--1003
 \@kuee13table=\count309
 \@kuee14chapter=\count310
 \@kuee14table=\count311
- [27]
+
+Overfull \hbox (18.7871pt too wide) in paragraph at lines 1054--1090
+[]\JY1/mc/m/n/12 ナノポアシ ーケンサ ーの読み出し特性の評価により得られたラベル
+ $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 N; A; C; G; T\OMS/cmsy/m/n/12 g$
+ []
+
+[27]
 \@kuee15chapter=\count312
 \@kuee15table=\count313
 \@kuee16chapter=\count314
@@ -477,7 +495,7 @@ File: longread1.png Graphic file (type bmp)
 File: longread2.png Graphic file (type bmp)
 <longread2.png>
 [32] [33]
-Overfull \hbox (68.66881pt too wide) in paragraph at lines 249--255
+Overfull \hbox (68.66881pt too wide) in paragraph at lines 259--265
  [][][] 
  []
 
@@ -491,10 +509,10 @@ L3 programming layer <2024-01-22>
 Here is how much of TeX's memory you used:
  2336 strings out of 475989
  35461 string characters out of 5789698
- 1941820 words of memory out of 5000000
+ 1942820 words of memory out of 5000000
  24456 multiletter control sequences out of 15000+600000
  584884 words of font info for 135 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 57i,19n,65p,223b,417s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,19n,65p,225b,416s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on bt.dvi (39 pages, 120728 bytes).
+Output written on bt.dvi (39 pages, 120856 bytes).
