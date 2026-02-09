@@ -90,7 +90,7 @@ DNAシーケンサーは数十から数百bp
 ショートリードシーケンサー\cite{Simon2009}と，
 数百から数万bpの長い塩基長のDNAを対象としたロングリードシーケンサー \cite{Amarasinghe2020}に大別されるが，
 DNAストレージに関する現在までの多くの研究では，
-SBS(Sequence By Synthesis)法\cite{SBS}と呼ばれる
+SBS (Sequence By Synthesis)法\cite{SBS}と呼ばれる
 技術を用いたショートリードシーケンサーが主に用いられてきた．
 SBS法は大量のDNA断片を並列に高精度に解析できる利点があるが，
 一度に解析できるDNAの塩基長が数百bp程度と短いことや，解析速度が遅いという欠点がある\cite{SBS}．
@@ -528,29 +528,29 @@ $\bm{P}_{\mathrm{CTC}}$から取得し，これを用いて報酬やペナルテ
 ペナルティ$P'_{\mathrm{sub}}$，$P'_{\mathrm{ins}}$，$P'_{\mathrm{del}}$を提案し，以下のように定義する．
 \begin{equation}
   \begin{split}
-    P'_{\mathrm{ok}} = P_{\mathrm{ok}} &+ \alpha_{\mathrm{ok}}(\bm{P}_{\mathrm{STATS}}(x_{hypo}, x_{max}(i))-\mu_{\mathrm{STATS}\_\mathrm{ok}}) \label{opt1} \\ 
-     &+ \beta_{\mathrm{ok}}(\bm{P}_{\mathrm{CTC}}(i, x_{hypo})-\mu_{\mathrm{CTC}\_\mathrm{ok}}) 
+    P'_{\mathrm{ok}} = P_{\mathrm{ok}} &+ \alpha_{\mathrm{ok}}(\bm{P}_{\mathrm{STATS}}(x_{\mathrm{hypo}}, x_{\mathrm{max}}(i))-\mu_{\mathrm{STATS}\_\mathrm{ok}}) \label{opt1} \\ 
+     &+ \beta_{\mathrm{ok}}(\bm{P}_{\mathrm{CTC}}(i, x_{\mathrm{hypo}})-\mu_{\mathrm{CTC}\_\mathrm{ok}}) 
   \end{split}
 \end{equation}
 \begin{equation}
   \begin{split}
-    P'_{\mathrm{sub}} = P_{\mathrm{sub}} &+ \alpha_{\mathrm{sub}}(\bm{P}_{\mathrm{STATS}}(x_{hypo}, x_{max}(i))-\mu_{\mathrm{STATS}\_\mathrm{sub}}) \label{opt2} \\
-    &+ \beta_{\mathrm{sub}}(\bm{P}_{\mathrm{CTC}}(i, x_{hypo})-\mu_{\mathrm{CTC}\_\mathrm{sub}})
+    P'_{\mathrm{sub}} = P_{\mathrm{sub}} &+ \alpha_{\mathrm{sub}}(\bm{P}_{\mathrm{STATS}}(x_{\mathrm{hypo}}, x_{\mathrm{max}}(i))-\mu_{\mathrm{STATS}\_\mathrm{sub}}) \label{opt2} \\
+    &+ \beta_{\mathrm{sub}}(\bm{P}_{\mathrm{CTC}}(i, x_{\mathrm{hypo}})-\mu_{\mathrm{CTC}\_\mathrm{sub}})
   \end{split}
 \end{equation}
 \begin{equation}
   \begin{split}
-    P'_{\mathrm{ins}} = P_{\mathrm{ins}} &+ \alpha_{\mathrm{ins}}(\bm{P}_{\mathrm{STATS}}(N, x_{max}(i-1))-\mu_{\mathrm{STATS}\_\mathrm{ins}}) \label{opt3}\\
-    &+ \beta_{\mathrm{ins}}(\bm{P}_{\mathrm{CTC}}(i-1, x_{hypo})-\mu_{\mathrm{CTC}\_\mathrm{ins}})
+    P'_{\mathrm{ins}} = P_{\mathrm{ins}} &+ \alpha_{\mathrm{ins}}(\bm{P}_{\mathrm{STATS}}(N, x_{\mathrm{max}}(i-1))-\mu_{\mathrm{STATS}\_\mathrm{ins}}) \label{opt3}\\
+    &+ \beta_{\mathrm{ins}}(\bm{P}_{\mathrm{CTC}}(i-1, x_{\mathrm{hypo}})-\mu_{\mathrm{CTC}\_\mathrm{ins}})
   \end{split}
 \end{equation}
 \begin{equation}
   \begin{split}
-    P'_{\mathrm{del}} = P_{\mathrm{del}} &+ \alpha_{\mathrm{del}}(\bm{P}_{\mathrm{STATS}}(x_{hypo}, N)-\mu_{\mathrm{STATS}\_\mathrm{del}}) \label{opt4}
+    P'_{\mathrm{del}} = P_{\mathrm{del}} &+ \alpha_{\mathrm{del}}(\bm{P}_{\mathrm{STATS}}(x_{\mathrm{hypo}}, N)-\mu_{\mathrm{STATS}\_\mathrm{del}}) \label{opt4}
   \end{split}
 \end{equation}
-ここで，$x_{hypo}$は仮説のビット列から出力される塩基を表し，$i$は仮説が参照する
-$\bm{P}_{\mathrm{CTC}}$の行番号を表す．また，$x_{max}(i)$は$\bm{P}_{\mathrm{CTC}}$の$i$行目において
+ここで，$x_{\mathrm{hypo}}$は仮説のビット列から出力される塩基を表し，$i$は仮説が参照する
+$\bm{P}_{\mathrm{CTC}}$の行番号を表す．また，$x_{\mathrm{max}}(i)$は$\bm{P}_{\mathrm{CTC}}$の$i$行目において
 出力確率が最大となる塩基を表す．$\bm{P}_{\mathrm{STATS}}(X,Y)\quad(x,y\in \{N,A,C,G,T\})$は$\bm{P}_{\mathrm{STATS}}$における
 ラベル$x$からラベル$y$への遷移に対応するスコアを表す．
 $\bm{P}_{\mathrm{CTC}}(i,X)$は，$\bm{P}_{\mathrm{CTC}}$の$i$行目におけるラベル$X$のスコアを表す．
@@ -574,10 +574,10 @@ $\mu_{\mathrm{CTC}\_\mathrm{ins}}$はそれぞれ，$\bm{P}_{\mathrm{CTC}}$に�
 $\beta_{\mathrm{ok}}$，$\beta_{\mathrm{sub}}$，$\beta_{\mathrm{ins}}$が乗じられており，
 シミュレーションにより固定のペナルティと各補正項の重み付けを最適化する．
 各定数の設定方法やパラメータの最適化手法については付録で詳しく述べる．
-% まず，仮説のビット列から出力される塩基を$x_{hypo}$とする．
+% まず，仮説のビット列から出力される塩基を$x_{\mathrm{hypo}}$とする．
 % また，仮説が参照する$\bm{P}_{\mathrm{CTC}}$の行番号を$i$とする．
 % このとき，$\bm{P}_{\mathrm{CTC}}$の$i$行目において出力確率が最大となる塩基を
-% $x_{max}(i)$とする．
+% $x_{\mathrm{max}}(i)$とする．
 
 \section{ロングリードに向けた符号化アルゴリズムの改良} \label{long_read_encoding}
 \ref{sec:problem}節で述べたように，既存のHEDGES符号化・復号手法では
@@ -605,14 +605,14 @@ DNA鎖のID，ビット位置，直前のビット列に基づく
 
 復号時にはまず，以下の手順でセパレータの位置を検出する．
 \begin{enumerate}
-  \item $n=l_{p} + l_{seg}$とする．ただし$l_p$はプライマー長，$l_{seg}$はセグメント長を表す．
-  \item $n-30<k<n+30$を満たす整数$k$対して$S_{match}(k)$を以下の式で計算し，
-  $S_{match}(k)$を最小とする$k$をセパレータの位置として選択し，これを$k'$とする．
+  \item $n=l_{\mathrm{p}} + l_{\mathrm{seg}}$とする．ただし$l_{\mathrm{p}}$はプライマー長，$l_{\mathrm{seg}}$はセグメント長を表す．
+  \item $n-30<k<n+30$を満たす整数$k$対して$S_{\mathrm{match}}(k)$を以下の式で計算し，
+  $S_{\mathrm{match}}(k)$を最小とする$k$をセパレータの位置として選択し，これを$k'$とする．
   \begin{align}
-    S_{match}(k) = \sum_{j=0}^{l_{sep}-1} \bm{P}_{\mathrm{CTC}}[k+j, S[j]] \label{eq:separator_detection}
+    S_{\mathrm{match}}(k) = \sum_{j=0}^{l_{\mathrm{sep}}-1} \bm{P}_{\mathrm{CTC}}(k+j, S_j) \label{eq:separator_detection}
   \end{align}
-  ただし$S[j]$はセパレータ配列の$j$番目の塩基を表し，$l_{sep}$はセパレータ配列の長さを表す．
-  \item $n=k' + l_{sep}+l_{seg}$とする．
+  ただし$S_j$はセパレータ配列の$j$番目の塩基を表し，$l_{\mathrm{sep}}$はセパレータ配列の長さを表す．
+  \item $n=k' + l_{\mathrm{sep}}+l_{\mathrm{seg}}$とする．
   \item 2から3を繰り返し，全てのセグメントのセパレータ位置を検出する．
 \end{enumerate}
 セパレータの位置が特定できたら，各セグメントごとに
