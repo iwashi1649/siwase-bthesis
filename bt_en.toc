@@ -1,0 +1,30 @@
+\contentsline {chapter}{\numberline {第{1}章}Introduction }{1}{}%
+\contentsline {chapter}{\numberline {第{2}章}Encoding and Readout in DNA Storage }{3}{}%
+\contentsline {section}{\numberline {2.1}Overview of DNA Storage}{3}{}%
+\contentsline {section}{\numberline {2.2}HEDGES}{4}{}%
+\contentsline {subsection}{\numberline {2.2.1}Encoding}{4}{}%
+\contentsline {subsection}{\numberline {2.2.2}Decoding}{6}{}%
+\contentsline {section}{\numberline {2.3}Nanopore Sequencers and Basecallers}{7}{}%
+\contentsline {section}{\numberline {2.4}Limitations of Existing Methods and Research Objective}{8}{}%
+\contentsline {chapter}{\numberline {第{3}章}Error Correction Method Assuming Readout by Nanopore Sequencers }{10}{}%
+\contentsline {section}{\numberline {3.1}Improving Search Efficiency in Decoding}{10}{}%
+\contentsline {subsection}{\numberline {3.1.1}Modeling Readout Characteristics of Nanopore Sequencers}{10}{}%
+\contentsline {subsection}{\numberline {3.1.2}Treatment of CTC Output}{11}{}%
+\contentsline {subsection}{\numberline {3.1.3}Optimization of Rewards and Penalties}{12}{}%
+\contentsline {section}{\numberline {3.2}Improved Encoding Algorithm for Long Reads}{13}{}%
+\contentsline {chapter}{\numberline {第{4}章}Simulation Evaluation }{15}{}%
+\contentsline {section}{\numberline {4.1}Decoding Search Efficiency Improvement}{15}{}%
+\contentsline {subsection}{\numberline {4.1.1}Experimental Method}{15}{}%
+\contentsline {subsection}{\numberline {4.1.2}Experimental Conditions}{16}{}%
+\contentsline {subsection}{\numberline {4.1.3}Results and Discussion}{16}{}%
+\contentsline {section}{\numberline {4.2}Improved Encoding Algorithm for Long Reads}{17}{}%
+\contentsline {subsection}{\numberline {4.2.1}Experimental Method}{17}{}%
+\contentsline {subsection}{\numberline {4.2.2}Experimental Conditions}{18}{}%
+\contentsline {subsection}{\numberline {4.2.3}Results and Discussion}{18}{}%
+\contentsline {chapter}{\numberline {第{5}章}結論 }{20}{}%
+\contentsline {chapter}{謝 辞}{21}{}%
+\contentsline {chapter}{参 考 文 献}{22}{}%
+\contentsline {chapter}{\numberline {付 録{A} }復号の探索効率化における予備実験 }{25}{}%
+\contentsline {section}{\numberline {A.1}実験方法}{25}{}%
+\contentsline {section}{\numberline {A.2}実験条件}{27}{}%
+\contentsline {section}{\numberline {A.3}結果}{28}{}%

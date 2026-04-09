@@ -1,0 +1,297 @@
+\begin{figure*}
+
+    \begin{center}
+        \includegraphics[width=150mm]{hedges.png}
+        \caption{Overview of HEDGES encoding}\label{fig:hedges_encoding}
+    \end{center}
+\end{figure*}
+\kueeseparator
+ 
+\begin{figure*}
+
+    \begin{center}
+        \includegraphics[width=100mm]{heap.png}
+        \caption{Heap structure in HEDGES decoding}\label{fig:heap}
+    \end{center}
+\end{figure*}
+\kueeseparator
+ 
+\begin{figure*}
+
+    \begin{center}
+        \includegraphics[width=150mm]{nanopore.png}
+        \caption{Principle and procedure of nanopore sequencing}\label{fig:nanopore}
+    \end{center}
+\end{figure*}
+\kueeseparator
+ 
+\begin{figure*}
+
+    \begin{center}
+        \includegraphics[width=150mm]{architecture.png}
+        \caption{Overview of the Bonito architecture}\label{fig:bonito}
+    \end{center}
+\end{figure*}
+\kueeseparator
+ 
+\clearpage
+\begin{figure*}
+
+    \begin{center}
+        \includegraphics[width=150mm]{optim.png}
+        \caption{Overview of the proposed method}\label{fig:optim}
+    \end{center}
+\end{figure*}
+\kueeseparator
+ 
+\begin{figure*}
+
+    \begin{center}
+        \includegraphics[width=150mm]{segment.png}
+        \caption{Encoding scheme of the proposed method}\label{fig:segment}
+    \end{center}
+\end{figure*}
+\kueeseparator
+ 
+\clearpage
+\begin{figure*}
+
+    \begin{center}
+        \includegraphics[width=150mm]{simu1.png}
+        \caption{Overview of the simulation procedure}\label{fig:sim1}
+    \end{center}
+\end{figure*}
+\kueeseparator
+ 
+\begin{table*}
+
+  \centering
+  \caption{Average number of heap searches per DNA strand}
+  \label{tab:results_heap}
+  \begin{tabular}{c|c|cccc}
+    \hline
+    \multicolumn{2}{c|}{Coding rate} & 0.75 & 0.6 & 0.5 & 0.33 \\
+    \hline
+    \multicolumn{2}{c|}{Existing method} & 135550 & 45219 & 21291 & 12290 \\
+    \hline
+    \multirow{3}{*}{Proposed method} & STATS only & 77281 & 23707 & 10893 & 4785 \\
+    \cline{2-6}
+     & CTC only & 53098 & 17966 & 9353 & 4354 \\
+    \cline{2-6}
+     & STATS+CTC & 48507 & 14972 & 7625 & 3894 \\
+    \hline
+  \end{tabular}
+\end{table*}
+\kueeseparator
+ 
+\begin{table*}
+
+  \centering
+  \caption{Bit-erasure rate}
+  \label{tab:results_deletion}
+  \begin{tabular}{c|c|cccc}
+    \hline
+    \multicolumn{2}{c|}{Coding rate} & 0.75 & 0.6 & 0.5 & 0.33 \\
+    \hline
+    \multicolumn{2}{c|}{Existing method} & 0.03083 & 0.00949 & 0.00341 & 0.00328 \\
+    \hline
+    \multirow{3}{*}{Proposed method} & STATS only & 0.00741 & 0.00376 & 0.00121 & 0.00076 \\
+    \cline{2-6}
+     & CTC only & 0.00789 & 0.00265 & 0.00111 & 0.00055 \\
+    \cline{2-6}
+     & STATS+CTC & 0.00693 & 0.00229 & 0.00069 & 0.00056 \\
+    \hline
+  \end{tabular}
+\end{table*}
+\kueeseparator
+ 
+\begin{table*}
+
+  \centering
+  \caption{Bit error rate after RS decoding}
+  \label{tab:results_final_ber}
+  \begin{tabular}{c|c|cccc}
+    \hline
+    \multicolumn{2}{c|}{Coding rate} & 0.75 & 0.6 & 0.5 & 0.33 \\
+    \hline
+    \multicolumn{2}{c|}{Existing method} & 0.022981 & $<10^{-6}$ & $<10^{-6}$ & $<10^{-6}$ \\
+    \hline
+    \multirow{3}{*}{Proposed method} & STATS only & 0.059977 & $<10^{-6}$ & $<10^{-6}$ & $<10^{-6}$ \\
+    \cline{2-6}
+     & CTC only & 0.008228 & $<10^{-6}$ & $<10^{-6}$ & $<10^{-6}$ \\
+    \cline{2-6}
+     & STATS+CTC & 0.005173 & $<10^{-6}$ & $<10^{-6}$ & $<10^{-6}$ \\
+    \hline
+  \end{tabular}
+\end{table*}
+\kueeseparator
+ 
+\begin{figure*}
+
+  \centering
+  \includegraphics[width=120mm]{longread1.png}
+  \caption{Relationship between base length and bit error rate}
+  \label{fig:long_read_results1}
+\end{figure*}
+\kueeseparator
+ 
+\begin{figure*}
+
+  \centering
+  \includegraphics[width=120mm]{longread2.png}
+  \caption{Relationship between base length and average number of heap searches per DNA strand}
+  \label{fig:long_read_results2}
+\end{figure*}
+\kueeseparator
+ 
+\clearpage
+\clearpage
+\clearpage
+\clearpage
+\begin{table*}
+
+  \centering
+  \begin{minipage}{0.48\linewidth}
+    \centering
+    \caption{符号化率ごとの報酬値$P_{\mathrm{ok}}$}
+    \label{tab:fixed_reward}
+    \begin{tabular}{c|c}
+      \hline
+      符号化率 & $P_{\mathrm{ok}}$ \\
+      \hline
+      0.75 & -0.035 \\
+      0.60 & -0.082 \\
+      0.50 & -0.127 \\
+      0.33 & -0.229 \\
+      \hline
+    \end{tabular}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.48\linewidth}
+    \centering
+    \caption{符号化率ごとの学習率$\eta$}
+    \label{tab:learning_rate}
+    \begin{tabular}{c|c}
+      \hline
+      符号化率 & $\eta$ \\
+      \hline
+      0.75 & $1.3 \times 10^{-7}$ \\
+      0.60 &  $4.1 \times 10^{-7}$\\
+      0.50 &  $1.0 \times 10^{-6}$ \\
+      0.33 &  $3.8 \times 10^{-6}$ \\
+      \hline
+    \end{tabular}
+  \end{minipage}
+\end{table*}
+\kueeseparator
+ 
+\begin{table*}
+
+  \centering
+  \caption{ラベル間の遷移確率}
+  \label{tab:transition_matrix}
+  \begin{tabular}{c|ccccc}
+    \hline
+    入力$\backslash$出力 & N & A & C & G & T \\
+    \hline
+    N & $0.000$ & $3.11 \times 10^{-4}$ & $3.11 \times 10^{-4}$ & $3.18 \times 10^{-4}$ & $3.86 \times 10^{-4}$  \\
+    A & $9.28 \times 10^{-4}$ & $0.232$ & $5.03 \times 10^{-4}$ & $1.01 \times 10^{-3}$ & $3.94 \times 10^{-5}$ \\
+    C & $5.95 \times 10^{-4}$ & $3.10 \times 10^{-4}$ & $0.244$ & $3.56 \times 10^{-4}$ & $1.27 \times 10^{-4}$ \\
+    G & $8.27 \times 10^{-4}$ & $9.00 \times 10^{-4}$ & $6.60 \times 10^{-4}$ & $0.269$ & $5.13 \times 10^{-5}$ \\
+    T & $6.73 \times 10^{-4}$ & $4.36 \times 10^{-5}$ & $1.55 \times 10^{-4}$ & $5.85 \times 10^{-5}$ & $0.247$ \\
+    \hline
+  \end{tabular}
+\end{table*}
+\kueeseparator
+ 
+\begin{table*}
+
+  \centering
+  \caption{得られた各期待値}
+  \label{tab:appendix_mu_values}
+  \begin{tabular}{c|c}
+    \hline
+    パラメータ & 値 \\
+    \hline
+    $\mu_{\mathrm{STATS}\_\mathrm{ok}}$ & 1.38 \\
+    $\mu_{\mathrm{STATS}\_\mathrm{sub}}$ & 7.52 \\
+    $\mu_{\mathrm{STATS}\_\mathrm{ins}}$ & 8.01 \\
+    $\mu_{\mathrm{STATS}\_\mathrm{del}}$ & 7.17 \\
+    $\mu_{\mathrm{CTC}\_\mathrm{ok}}$ & 0.111 \\
+    $\mu_{\mathrm{CTC}\_\mathrm{sub}}$ & 6.85 \\
+    $\mu_{\mathrm{CTC}\_\mathrm{ins}}$ & 2.78 \\
+    \hline
+  \end{tabular}
+\end{table*}
+\kueeseparator
+ 
+\begin{table*}
+
+  \centering
+  \caption{符号化率ごとに最適化したペナルティ}
+  \label{tab:appendix_params_p}
+  \footnotesize
+  \begin{tabular}{c|c|ccc}
+    \hline
+    符号化率 & 手法 & $P_{\mathrm{sub}}$ & $P_{\mathrm{ins}}$ & $P_{\mathrm{del}}$ \\
+    \hline
+    \multirow{3}{*}{0.75} & STATSのみ$^{*}$ & 0.630 & 0.650 & 0.687 \\
+    & CTCのみ$^{**}$ & 0.837 & 0.912 & 0.765 \\
+    & STATS+CTC$^{***}$ & 0.875 & 0.911 & 0.778 \\
+    \hline
+    \multirow{3}{*}{0.60} & STATSのみ$^{*}$ & 0.883 & 0.965 & 0.995 \\
+    & CTCのみ$^{**}$ & 0.856 & 1.06 & 0.890 \\
+    & STATS+CTC$^{***}$ & 1.08 & 1.17 & 1.02 \\
+    \hline
+    \multirow{3}{*}{0.50} & STATSのみ$^{*}$ & 0.988 & 1.17 & 1.25 \\
+    & CTCのみ$^{**}$ & 0.953 & 1.11 & 1.04 \\
+    & STATS+CTC$^{***}$ & 1.15 & 1.23 & 1.19 \\
+    \hline
+    \multirow{3}{*}{0.33} & STATSのみ$^{*}$ & 1.07 & 1.25 & 1.39 \\
+    & CTCのみ$^{**}$ & 1.06 & 1.22 & 1.21 \\
+    & STATS+CTC$^{***}$ & 1.29 & 1.35 & 1.34 \\
+    \hline
+  \end{tabular}
+
+  \small
+  \vspace{0.3cm}
+
+  \noindent
+  \begin{tabular}{@{}l@{}}
+    $^{*}$STATSのみ: ナノポアシーケンサーの読み出し特性に基づく補正項のみを使用 \\
+    $^{**}$CTCのみ: CTC出力に基づく補正項のみを使用 \\
+    $^{***}$STATS+CTC: ナノポアシーケンサーの読み出し特性およびCTC出力の両方に基づく補正項を使用
+  \end{tabular}
+\end{table*}
+\kueeseparator
+ 
+\begin{table*}
+
+  \centering
+  \caption{符号化率ごとに最適化した補正項の重み付けパラメータ}
+  \label{tab:appendix_params_alpha_beta}
+  \footnotesize
+  \begin{tabular}{c|c|cccc|ccc}
+    \hline
+    符号化率 & 手法 & $\alpha_{\mathrm{ok}}$ & $\alpha_{\mathrm{sub}}$ & $\alpha_{\mathrm{del}}$ & $\alpha_{\mathrm{ins}}$ & $\beta_{\mathrm{ok}}$ & $\beta_{\mathrm{sub}}$ & $\beta_{\mathrm{ins}}$ \\
+    \hline
+    \multirow{3}{*}{0.75} & STATSのみ& 0.0605 & 0.116 & 0.0929 & 0.0952 & 0.00 & 0.00 & 0.00 \\
+    & CTCのみ& 0.00 & 0.00 & 0.00 & 0.00 & -0.192 & 0.211 & 0.347 \\
+    & STATS+CTC& 0.00668 & 0.130 & -0.0105 & 0.544 & -0.150 & 0.181 & 0.301 \\
+    \hline
+    \multirow{3}{*}{0.60} & STATSのみ & 0.00513 & 0.256 & 0.200 & 0.0969 & 0.00 & 0.00 & 0.00 \\
+    & CTCのみ & 0.00 & 0.00 & 0.00 & 0.00 & -0.223 & 0.190 & 0.419 \\
+    & STATS+CTC & 0.110 & 0.243 & 0.236 & 0.219 & -0.115 & 0.184 & 0.330 \\
+    \hline
+    \multirow{3}{*}{0.50} & STATSのみ & 0.0548 & 0.294 & 0.0800 & 0.0871 & 0.00 & 0.00 & 0.00 \\
+    & CTCのみ & 0.00 & 0.00 & 0.00 & 0.00 & -0.108 & 0.193 & 0.411 \\
+    & STATS+CTC & 0.131 & 0.292 & 0.234 & 0.176 & -0.136 & 0.188 & 0.467 \\
+    \hline
+    \multirow{3}{*}{0.33} & STATSのみ & -0.00773 & 0.282 & 0.167 & 0.246 & 0.00 & 0.00 & 0.00 \\
+    & CTCのみ & 0.00 & 0.00 & 0.00 & 0.00 & 0.0272 & 0.145 & 0.422 \\
+    & STATS+CTC & 0.0260 & 0.328 & 0.177 & 0.230 & 0.0417 & 0.134 & 0.460 \\
+    \hline
+  \end{tabular}
+\end{table*}
+\kueeseparator
+ 
